@@ -47,6 +47,8 @@ main {
 
 .button {
   height: 48px;
+
+  cursor: pointer;
 }
 
 .button__background {
@@ -79,6 +81,8 @@ main {
   background-size: 24px 24px;
   background-repeat: no-repeat;
   background-position: center;
+
+  cursor: pointer;
 }
 
 .radio {
@@ -91,6 +95,8 @@ main {
   background-size: 24px 24px;
   background-repeat: no-repeat;
   background-position: center;
+
+  cursor: pointer;
 }
 
 .list-item {
