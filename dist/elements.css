@@ -1,0 +1,42 @@
+:root {
+  --text-emphasis-high: hsla(0, 0%, 100%, 0.87);
+  --text-emphasis-medium: hsla(0, 0%, 100%, 0.6);
+  --text-disabled: hsla(0, 0%, 100%, 0.38);
+
+  --control-active: hsla(9, 100%, 64%, 1);
+  --control-inactive: hsla(9, 100%, 64%, 0.6);
+  --control-disabled: hsla(9, 100%, 64%, 0.38);
+
+  --separator: hsla(0, 0%, 100%, 0.12);
+
+  --list-item__background: transparent;
+}
+
+.button {
+  --button__label-text_idle: var(--text-emphasis-high);
+  --button__background_idle: var(--control-active);
+}
+
+.label {
+  --label__label-text_idle: var(--text-emphasis-high);
+}
+
+.slider {
+  --slider__track-background_idle: hsla(0, 100%, 100%, 0.12);
+  --slider__track-progress_idle: var(--control-active);
+}
+
+.checkbox {
+  --checkbox__background_idle: var(--control-active);
+}
+
+.radio {
+  --radio__background_idle: var(--control-active);
+}
+
+.list-item {
+  --list-item__separator-background_idle: var(--separator);
+  --list-item__title-text_idle: var(--text-emphasis-high);
+  --list-item__subtitle-text_idle: var(--text-emphasis-medium);
+  --list-item__background_idle: var(--list-item__background);
+}
