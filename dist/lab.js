@@ -5,7 +5,11 @@ function handleDOMContentLoaded() {
 const Data = (function makeData() {
   const CONFIG = {};
 
-  let state = {};
+  let state = {
+    tint: {
+      hex: null,
+    },
+  };
 
   const getRandomData = function getRandomData() {
     return {};
@@ -14,7 +18,9 @@ const Data = (function makeData() {
   const resetData = function resetData() {};
 
   return {
-    init() {},
+    init() {
+      state.tint.hex = ColorUtil.getRandomHexColor();
+    },
 
     getData() {
       return { ...state };
@@ -30,18 +36,46 @@ const Data = (function makeData() {
 })();
 
 const App = (function buildApp() {
-  function render() {}
+  const rootEl = document.documentElement;
+  let colorInputEl;
 
-  function addEventListeners() {}
+  function render(data) {
+    updateColorInputEl(data.tint.hex);
+    updateCSSCustomProps(data.tint.hex);
+  }
 
-  function setDomReferences() {}
+  function updateColorInputEl(hexColor) {
+    colorInputEl.value = hexColor;
+  }
+
+  function updateCSSCustomProps(tintHex) {
+    rootEl.style.setProperty('--l-tint', tintHex);
+    rootEl.style.setProperty('--d-tint', tintHex);
+  }
+
+  function handleColorInput(e) {
+    Data.setData({
+      tint: {
+        hex: e.target.value,
+      },
+    });
+    render(Data.getData());
+  }
+
+  function addEventListeners() {
+    colorInputEl.addEventListener('input', handleColorInput);
+  }
+
+  function setDomReferences() {
+    colorInputEl = document.getElementsByClassName('color-well__input').item(0);
+  }
 
   return {
     async init() {
       Data.init();
       setDomReferences();
       addEventListeners();
-      render();
+      render(Data.getData());
     },
   };
 })();
