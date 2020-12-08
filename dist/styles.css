@@ -1,7 +1,7 @@
 body {
   margin: 0;
 
-  color: white;
+  color: black;
   /* background-color: var(--grouped-background); */
   background-color: hsla(240, 3%, 82%, 1);
 
@@ -11,11 +11,52 @@ body {
 main {
 }
 
-.main-content {
+.main__content {
+  display: flex;
+
+  flex-direction: column;
 }
 
 .elements__container {
   padding: 16px;
+}
+
+.main__color-well-container {
+  flex-grow: 1;
+  /* flex-shrink: 0; */
+  flex-basis: 200px;
+
+  padding: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-well__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.color-well__input-label {
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.color-well__input {
+  margin: 0;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  border: none;
+  /* border-radius: 28px; */
+
+  background-color: none;
+  cursor: pointer;
+
+  display: block;
 }
 
 .elements__content {
