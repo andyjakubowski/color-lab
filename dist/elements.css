@@ -114,6 +114,7 @@
   --d-link: var(--d-tint);
 
   --tint: var(--l-tint);
+  --tint-inverse: white;
 
   /* Label Colors */
   --label: var(--l-label);
@@ -161,17 +162,17 @@
 }
 
 .button {
-  --button__label-text_idle: var(--label);
+  --button__label-text_idle: var(--tint-inverse);
   --button__background_idle: var(--tint);
 }
 
 .button.light {
-  --button__label-text_idle: var(--l-label);
+  --button__label-text_idle: var(--tint-inverse);
   --button__background_idle: var(--l-tint);
 }
 
 .button.dark {
-  --button__label-text_idle: var(--d-label);
+  --button__label-text_idle: var(--tint-inverse);
   --button__background_idle: var(--d-tint);
 }
 
