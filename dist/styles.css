@@ -2,7 +2,8 @@ body {
   margin: 0;
 
   color: white;
-  background-color: black;
+  /* background-color: var(--grouped-background); */
+  background-color: hsla(240, 3%, 82%, 1);
 
   font-family: sans-serif;
 }
@@ -24,25 +25,44 @@ main {
 }
 
 .elements__element-container {
-  padding: 32px;
+  /* padding: 32px; */
   height: 300px;
+  border-radius: 14px;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* background-color: var(--secondary-grouped-background); */
 }
 
 .elements__element-content {
   width: 100%;
-  height: 56px;
+  height: 100%;
+
+  display: flex;
+
+  /* background-color: rgba(255, 255, 255, 0.02); */
+}
+
+.elements__element-pane {
+  flex-grow: 1;
+
+  padding: 16px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  background-color: rgba(255, 255, 255, 0.02);
+.elements__element-pane.light {
+  background-color: var(--l-background);
+}
+
+.elements__element-pane.dark {
+  background-color: var(--d-background);
 }
 
 .button {
@@ -101,7 +121,7 @@ main {
 
 .list-item {
   width: 100%;
-  height: 100%;
+  height: 56px;
 
   display: flex;
   flex-direction: column;
@@ -110,7 +130,7 @@ main {
 }
 
 .list-item__separator {
-  height: 1px;
+  height: 0.5px;
 
   background-color: var(--list-item__separator-background_idle);
 }
@@ -136,17 +156,19 @@ main {
 .slider {
   --slider-track-background: var(--slider__track-background_idle);
   --slider-track-fill: var(--slider__track-progress_idle);
-  --slider-track-height: 2;
+  --slider-track-height: 4;
   --slider-track-height-px: calc(var(--slider-track-height) * 1px);
   --slider-track-border: none;
   --slider-track-box-shadow: none;
   --slider-track-border-radius: none;
-  --slider-thumb-fill: #eee;
-  --slider-thumb-size: 24;
+  --slider-thumb-fill: white;
+  --slider-thumb-size: 28;
   --slider-thumb-width: calc(var(--slider-thumb-size) * 1px);
   --slider-thumb-height: calc(var(--slider-thumb-size) * 1px);
   --slider-thumb-border-radius: calc(calc(var(--slider-thumb-size) / 2) * 1px);
-  --slider-thumb-box-shadow: none;
+  --slider-thumb-box-shadow-color: hsla(0, 0%, 0%, 0.12);
+  --slider-thumb-box-shadow: 0 0.5px 4px var(--slider-thumb-box-shadow-color),
+    0 6px 13px var(--slider-thumb-box-shadow-color);
 
   --slider-track-height-half: calc(var(--slider-track-height) / 2);
   --slider-thumb-height-half: calc(var(--slider-thumb-size) / 2);
