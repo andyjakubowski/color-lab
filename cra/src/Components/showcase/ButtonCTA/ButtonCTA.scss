@@ -1,11 +1,20 @@
 .ButtonCTA {
   &__bezel {
-    width: 80px;
+    padding: 0 16px;
+    max-width: 382px;
     height: 48px;
-    background-color: tomato;
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--tint);
+
+    cursor: pointer;
 
     &_default {
-      background-color: rgba(220, 30, 30, 0.7);
+      // background-color: rgba(220, 30, 30, 0.7);
     }
 
     &_default:hover,
@@ -30,6 +39,6 @@
   }
 
   &__label {
-    color: white;
+    color: var(--tint-inverse, white);
   }
 }
