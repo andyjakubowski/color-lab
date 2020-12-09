@@ -1,0 +1,35 @@
+.ButtonCTA {
+  &__bezel {
+    width: 80px;
+    height: 48px;
+    background-color: tomato;
+
+    &_default {
+      background-color: rgba(220, 30, 30, 0.7);
+    }
+
+    &_default:hover,
+    &_hovered {
+      background-color: rgba(220, 30, 30, 0.8);
+    }
+
+    &_default:focus,
+    &_focused {
+      background-color: rgba(220, 30, 30, 0.9);
+    }
+
+    &_default:active,
+    &_pressed {
+      background-color: rgba(220, 30, 30, 0.9);
+    }
+
+    &_default:disabled,
+    &_disabled {
+      background-color: gray;
+    }
+  }
+
+  &__label {
+    color: white;
+  }
+}

@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import ButtonCTA from './Components/ButtonCTA/ButtonCTA';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ButtonCTA componentState="default" />
+      <ButtonCTA componentState="hovered" />
+      <ButtonCTA componentState="focused" />
+      <ButtonCTA componentState="pressed" />
+      <ButtonCTA componentState="selected" />
+      <ButtonCTA componentState="disabled" />
     </div>
   );
 }
