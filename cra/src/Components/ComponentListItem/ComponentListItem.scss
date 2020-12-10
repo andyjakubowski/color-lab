@@ -1,0 +1,12 @@
+.ComponentListItem {
+  &__component-name {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 16px;
+    background: var(--secondary-background);
+  }
+
+  &__content {
+  }
+}

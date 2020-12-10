@@ -1,3 +1,4 @@
+import './layoutHelp.scss';
 import './App.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
@@ -12,7 +13,7 @@ function App() {
     'selected',
     'disabled',
   ];
-  const components = [ButtonCTA];
+  const components = [ButtonCTA, ButtonCTA, ButtonCTA, ButtonCTA];
 
   return (
     <div className="App">

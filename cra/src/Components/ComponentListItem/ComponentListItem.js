@@ -14,8 +14,8 @@ function ComponentListItem({ Component, colorModes, componentStates }) {
 
   return (
     <div className="ComponentListItem">
-      <h3>{Component.name}</h3>
-      <div className="ComponentListItem__content">{modes}</div>
+      <h3 className="ComponentListItem__component-name">{Component.name}</h3>
+      {modes}
     </div>
   );
 }

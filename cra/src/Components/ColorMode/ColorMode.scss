@@ -1,0 +1,46 @@
+.ColorMode {
+  display: flex;
+  background-color: var(--background);
+
+  &__title {
+    // padding: 0 24px;
+    flex-basis: 140px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--tertiary-label);
+  }
+
+  &__states {
+    --element-state-size: 240;
+    --element-state-width: calc(var(--element-state-size) * 1px);
+    --element-state-height: calc(var(--element-state-size) * 1px);
+
+    display: grid;
+    grid-template-columns: repeat(6, var(--element-state-width));
+    grid-template-rows: var(--element-state-height);
+  }
+
+  &__state-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+  }
+
+  &__state-label {
+    padding-top: 16px;
+    color: var(--quaternary-label);
+    text-align: center;
+  }
+
+  &__component-container {
+    // flex-grow: 1;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+}
