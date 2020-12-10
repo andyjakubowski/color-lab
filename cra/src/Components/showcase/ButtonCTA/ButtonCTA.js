@@ -4,14 +4,6 @@ import getClassNames from '../../../util/util';
 
 function ButtonCTA({ componentState, appearanceData }) {
   const CTA_TEXT = 'Send';
-  // const getClassNames = function getClassNames(elements) {
-  //   return elements.reduce((classNamesObject, element) => {
-  //     return {
-  //       ...classNamesObject,
-  //       [element]: `${block}__${element} ${block}__${element}_${modifier}`,
-  //     };
-  //   }, {});
-  // };
   const supportedStates = [
     'default',
     'hovered',
