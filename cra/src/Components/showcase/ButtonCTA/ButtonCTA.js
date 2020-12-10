@@ -1,16 +1,17 @@
 import './ButtonCTA.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
+import getClassNames from '../../../util/util';
 
 function ButtonCTA({ componentState, appearanceData }) {
   const CTA_TEXT = 'Send';
-  const getClassNames = function getClassNames(elements) {
-    return elements.reduce((classNamesObject, element) => {
-      return {
-        ...classNamesObject,
-        [element]: `${block}__${element} ${block}__${element}_${modifier}`,
-      };
-    }, {});
-  };
+  // const getClassNames = function getClassNames(elements) {
+  //   return elements.reduce((classNamesObject, element) => {
+  //     return {
+  //       ...classNamesObject,
+  //       [element]: `${block}__${element} ${block}__${element}_${modifier}`,
+  //     };
+  //   }, {});
+  // };
   const supportedStates = [
     'default',
     'hovered',
@@ -22,7 +23,7 @@ function ButtonCTA({ componentState, appearanceData }) {
   const block = `ButtonCTA`;
   const elements = ['bezel', 'label'];
   const modifier = componentState;
-  const classNames = getClassNames(elements);
+  const classNames = getClassNames(block, elements, modifier);
 
   let returnElement;
 
