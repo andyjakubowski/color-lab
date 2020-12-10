@@ -10,8 +10,6 @@
 
   /* l stands for light mode */
 
-  --l-tint: tomato;
-
   /* Label Colors */
   --l-label: #000;
   /* The color for text labels that contain primary content. */
@@ -79,8 +77,6 @@
 
   /* d stands for light mode */
 
-  --d-tint: tomato;
-
   /* Label Colors */
   --d-label: #ffffff;
   --d-secondary-label: #ebebf59a;
@@ -113,7 +109,6 @@
   /* Link Color */
   --d-link: var(--d-tint);
 
-  --tint: var(--l-tint);
   --tint-inverse: white;
 
   /* Label Colors */
@@ -146,7 +141,7 @@
   --opaque-separator: var(--l-opaque-separator);
 
   /* Link Color */
-  --link: var(--tint);
+  // --link: var(--tint);
 
   --text-emphasis-high: hsla(0, 0%, 100%, 0.87);
   --text-emphasis-medium: hsla(0, 0%, 100%, 0.6);
@@ -159,10 +154,6 @@
   /* --separator: hsla(0, 0%, 100%, 0.12); */
 
   --list-item__background: transparent;
-}
-
-:root {
-  // background-color: var(--grouped-background);
 }
 
 .App {

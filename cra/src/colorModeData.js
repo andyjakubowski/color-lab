@@ -5,7 +5,6 @@ const colorModes = [
   {
     name: 'Light Mode',
     data: {
-      '--tint': tint,
       '--tint-inverse': tintInverse,
       '--label': '#000',
       '--secondary-label': '#3c3c439a',
@@ -30,7 +29,6 @@ const colorModes = [
   {
     name: 'Dark Mode',
     data: {
-      '--tint': tintDarkMode,
       '--tint-inverse': tintInverse,
       '--label': '#ffffff',
       '--secondary-label': '#ebebf59a',

@@ -9,6 +9,7 @@ import Checkbox from './components/showcase/Checkbox/Checkbox';
 import Radio from './components/showcase/Radio/Radio';
 import ListItem from './components/showcase/ListItem/ListItem';
 import colorModes from './colorModeData';
+import React, { useState } from 'react';
 
 // const componentNames = [
 //   'ButtonCTA',
@@ -50,6 +51,15 @@ import colorModes from './colorModeData';
 // const components = componentNames.map((name) => await import())
 
 function App() {
+  const defaultTint = 'green';
+
+  const updateTint = function updateTint(value) {
+    document.documentElement.style.setProperty('--tint', value);
+  };
+
+  const handleColorPickerInput = function handleColorPickerInput(e) {
+    updateTint(e.target.value);
+  };
   const componentStates = [
     'default',
     'hovered',
@@ -65,6 +75,7 @@ function App() {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   };
 
+  updateTint(defaultTint);
   setVh();
   window.addEventListener('load', setVh);
   window.addEventListener('resize', setVh);
@@ -79,9 +90,7 @@ function App() {
         />
       </div>
       <div className="App__Inspector-container">
-        <Inspector
-          onColorPickerInput={() => console.log('Color picker input')}
-        />
+        <Inspector onColorPickerInput={(e) => handleColorPickerInput(e)} />
       </div>
     </div>
   );

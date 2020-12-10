@@ -10,13 +10,17 @@ function Inspector({ onColorPickerInput }) {
     <div className={bemClass('container')}>
       <div className={bemClass('content')}>
         <div className={bemClass('tint-picker-container')}>
-          <label for="tint-picker" class={bemClass('tint-picker-label')}>
+          <label
+            htmlFor="tint-picker"
+            className={bemClass('tint-picker-label')}
+          >
             {TINT_LABEL_TEXT}
           </label>
           <input
             type="color"
             className={bemClass('tint-picker-input')}
             id="tint-picker"
+            onInput={onColorPickerInput}
           />
         </div>
       </div>
