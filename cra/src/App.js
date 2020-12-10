@@ -2,6 +2,7 @@ import './layoutHelp.scss';
 import './App.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
+import Label from './components/showcase/Label/Label';
 import colorModes from './colorModeData';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     'selected',
     'disabled',
   ];
-  const components = [ButtonCTA, ButtonCTA, ButtonCTA, ButtonCTA];
+  const components = [ButtonCTA, Label];
 
   return (
     <div className="App">
