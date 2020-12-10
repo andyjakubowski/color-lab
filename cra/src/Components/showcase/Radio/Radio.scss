@@ -1,0 +1,15 @@
+.Radio {
+  --radio__background_idle: var(--tint);
+
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+
+  background: url(../../../assets/icons/radio.svg);
+  background-color: var(--radio__background_idle);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: pointer;
+}
