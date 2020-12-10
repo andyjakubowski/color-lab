@@ -167,4 +167,22 @@
 
 .App {
   // background-color: var(--secondary-grouped-background);
+  display: flex;
+  align-items: flex-start;
+
+  &__ComponentList-container {
+    flex-grow: 1;
+
+    overflow: hidden;
+  }
+
+  &__Inspector-container {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    position: sticky;
+    top: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 280px;
+  }
 }

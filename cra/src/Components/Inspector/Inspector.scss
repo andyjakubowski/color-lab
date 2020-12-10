@@ -1,0 +1,35 @@
+.Inspector {
+  &__container {
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+  }
+
+  &__tint-picker {
+    &-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-label {
+      color: var(--label);
+    }
+
+    &-input {
+      margin-block-start: 8px;
+      --size: 48px;
+      padding: 0;
+      border: none;
+      border-radius: calc(var(--size) / 2);
+      width: var(--size);
+      height: var(--size);
+
+      overflow: hidden;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
