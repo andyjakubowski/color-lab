@@ -1,6 +1,6 @@
 const tint = 'tomato';
 const tintInverse = 'white';
-const tintDarkMode = 'thistle';
+const tintDarkMode = tint;
 const colorModes = [
   {
     name: 'Light Mode',
