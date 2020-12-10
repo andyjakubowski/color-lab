@@ -38,9 +38,12 @@
   }
 
   &__component-container {
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
     // flex-grow: 1;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

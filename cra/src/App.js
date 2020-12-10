@@ -3,6 +3,7 @@ import './App.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
 import Label from './components/showcase/Label/Label';
+import Slider from './components/showcase/Slider/Slider';
 import colorModes from './colorModeData';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     'selected',
     'disabled',
   ];
-  const components = [ButtonCTA, Label];
+  const components = [ButtonCTA, Label, Slider];
 
   return (
     <div className="App">

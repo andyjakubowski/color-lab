@@ -1,0 +1,155 @@
+.Slider {
+  --slider__track-background_idle: var(--fill);
+  --slider__track-progress_idle: var(--tint);
+
+  --slider-track-background: var(--slider__track-background_idle);
+  --slider-track-fill: var(--slider__track-progress_idle);
+  --slider-track-height: 4;
+  --slider-track-height-px: calc(var(--slider-track-height) * 1px);
+  --slider-track-border: none;
+  --slider-track-box-shadow: none;
+  --slider-track-border-radius: none;
+  --slider-thumb-fill: white;
+  --slider-thumb-size: 28;
+  --slider-thumb-width: calc(var(--slider-thumb-size) * 1px);
+  --slider-thumb-height: calc(var(--slider-thumb-size) * 1px);
+  --slider-thumb-border-radius: calc(calc(var(--slider-thumb-size) / 2) * 1px);
+  --slider-thumb-box-shadow-color: hsla(0, 0%, 0%, 0.12);
+  --slider-thumb-box-shadow: 0 0.5px 4px var(--slider-thumb-box-shadow-color),
+    0 6px 13px var(--slider-thumb-box-shadow-color);
+
+  --slider-track-height-half: calc(var(--slider-track-height) / 2);
+  --slider-thumb-height-half: calc(var(--slider-thumb-size) / 2);
+  --slider-webkit-margin-offset: calc(
+    var(--slider-track-height-half) - var(--slider-thumb-height-half)
+  );
+  --slider-webkit-margin-px: calc(var(--slider-webkit-margin-offset) * 1px);
+
+  margin: 0;
+  width: 100%;
+  min-height: 48px;
+
+  /* max-width: 320px; */
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: var(--slider-track-height-px);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-track-border-radius);
+
+    box-shadow: var(--slider-track-box-shadow);
+
+    background-color: var(--slider-track-background);
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: var(--slider-webkit-margin-px);
+
+    width: var(--slider-thumb-width);
+    height: var(--slider-thumb-height);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-thumb-border-radius);
+
+    box-shadow: var(--slider-thumb-box-shadow);
+
+    background: var(--slider-thumb-fill);
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background-color: var(--slider-track-background);
+  }
+
+  &::-moz-range-progress {
+    height: var(--slider-track-height-px);
+    border: var(--slider-track-border);
+
+    box-shadow: var(--slider-track-box-shadow);
+
+    background-color: var(--slider-track-fill);
+  }
+
+  &::-moz-range-track {
+    height: var(--slider-track-height-px);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-track-border-radius);
+
+    box-shadow: var(--slider-track-box-shadow);
+
+    background-color: var(--slider-track-background);
+  }
+
+  &::-moz-range-thumb {
+    width: var(--slider-thumb-width);
+    height: var(--slider-thumb-height);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-thumb-border-radius);
+
+    box-shadow: var(--slider-thumb-box-shadow);
+
+    background: var(--slider-thumb-fill);
+  }
+
+  &::-ms-track {
+    height: var(--slider-track-height-px);
+    background: transparent;
+    border-color: transparent;
+    border: var(--slider-track-border);
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    height: var(--slider-track-height-px);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-track-border-radius);
+
+    box-shadow: var(--slider-track-box-shadow);
+
+    background-color: var(--slider-track-background);
+  }
+
+  &::-ms-fill-upper {
+    height: var(--slider-track-height-px);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-track-border-radius);
+
+    box-shadow: var(--slider-track-box-shadow);
+
+    background-color: var(--slider-track-background);
+  }
+
+  &::-ms-thumb {
+    width: var(--slider-thumb-width);
+    height: var(--slider-thumb-height);
+    border: var(--slider-track-border);
+    border-radius: var(--slider-thumb-border-radius);
+
+    box-shadow: var(--slider-thumb-box-shadow);
+
+    background: var(--slider-thumb-fill);
+  }
+
+  &:focus::-ms-fill-lower {
+    background-color: var(--slider-track-background);
+  }
+
+  &:focus::-ms-fill-upper {
+    background-color: var(--slider-track-background);
+  }
+}
+
+/* Make the thumb bigger for imprecise pointers */
+@media (any-pointer: coarse) {
+  .slider {
+    --slider-thumb-size: 48;
+  }
+}
