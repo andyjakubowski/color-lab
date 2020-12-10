@@ -9,46 +9,6 @@ import Checkbox from './components/showcase/Checkbox/Checkbox';
 import Radio from './components/showcase/Radio/Radio';
 import ListItem from './components/showcase/ListItem/ListItem';
 import colorModes from './colorModeData';
-import React, { useState } from 'react';
-
-// const componentNames = [
-//   'ButtonCTA',
-//   'Label',
-//   'Slider',
-//   'Checkbox',
-//   'Radio',
-//   'ListItem',
-// ];
-
-// async function getComponents() {
-//   return await import('./components/showcase/ButtonCTA/ButtonCTA');
-// }
-
-// import(`./components/showcase/${componentNames[0]}/${componentNames[0]}`).then(
-//   (module) => {
-//     console.log('dynamically imported the module');
-//     console.log(module);
-//   }
-// );
-
-// let buttonModule = 'BLA';
-
-// const paths = componentNames.map(
-//   (name) => `./components/showcase/${name}/${name}`
-// );
-
-// (async function () {
-//   const path = paths[0];
-//   console.log(path);
-//   buttonModule = await import('./components/showcase/ButtonCTA/ButtonCTA');
-//   console.log(buttonModule);
-// })();
-
-// const button = async function () {
-//   return await import(paths[0]);
-// };
-// console.log(button());
-// const components = componentNames.map((name) => await import())
 
 function App() {
   const defaultTint = 'green';
