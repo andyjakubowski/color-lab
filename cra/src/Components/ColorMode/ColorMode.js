@@ -2,15 +2,11 @@ import './ColorMode.scss';
 
 function ColorMode({ Component, appearanceData, componentStates, modeName }) {
   const states = componentStates.map((stateName, index) => (
-    <div class="ColorMode__state-container">
-      <div class="ColorMode__component-container">
-        <Component
-          key={index.toString()}
-          appearanceData={appearanceData}
-          componentState={stateName}
-        />
+    <div className="ColorMode__state-container" key={index.toString()}>
+      <div className="ColorMode__component-container">
+        <Component appearanceData={appearanceData} componentState={stateName} />
       </div>
-      <div class="ColorMode__state-label">{stateName}</div>
+      <div className="ColorMode__state-label">{stateName}</div>
     </div>
   ));
 
