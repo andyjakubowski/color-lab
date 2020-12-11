@@ -1,23 +1,18 @@
 .ListItem {
   &__container {
-    --list-item__separator-background_idle: var(--separator);
-    --list-item__title-text_idle: var(--label);
-    --list-item__subtitle-text_idle: var(--secondary-label);
-    --list-item__background_idle: var(--background);
-
     width: 100%;
     height: 56px;
 
     display: flex;
     flex-direction: column;
 
-    background-color: var(--list-item__background_idle);
+    background-color: var(--ListItem__background_idle);
   }
 
   &__separator {
     height: 0.5px;
 
-    background-color: var(--list-item__separator-background_idle);
+    background-color: var(--ListItem__separator-background_idle);
   }
 
   &__content {
@@ -31,10 +26,10 @@
   }
 
   &__title {
-    color: var(--list-item__title-text_idle);
+    color: var(--ListItem__title-text_idle);
   }
 
   &__subtitle {
-    color: var(--list-item__subtitle-text_idle);
+    color: var(--ListItem__subtitle-text_idle);
   }
 }

@@ -1,8 +1,8 @@
 import './ButtonCTA.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import getClassNames from '../../../util/util';
+import getClassNames, { getColorModeClassName } from '../../../util/util';
 
-function ButtonCTA({ componentState, appearanceData }) {
+function ButtonCTA({ componentState, colorModeName }) {
   const CTA_TEXT = 'Send';
   const supportedStates = [
     'default',
@@ -16,22 +16,20 @@ function ButtonCTA({ componentState, appearanceData }) {
   const elements = ['bezel', 'label'];
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
+  const colorModeClassName = getColorModeClassName(colorModeName);
 
   let returnElement;
 
   if (isStateSupported) {
     returnElement = (
-      <div className={classNames.bezel} style={appearanceData}>
-        <span className={classNames.label}>{CTA_TEXT}</span>
+      <div className={`${block} ${colorModeClassName}`}>
+        <div className={classNames.bezel}>
+          <span className={classNames.label}>{CTA_TEXT}</span>
+        </div>
       </div>
     );
   } else {
-    returnElement = (
-      <UnsupportedStatePlaceholder
-        stateName={componentState}
-        appearanceData={appearanceData}
-      />
-    );
+    returnElement = <UnsupportedStatePlaceholder />;
   }
 
   return returnElement;

@@ -1,12 +1,7 @@
 import './UnsupportedStatePlaceholder.scss';
 
-function UnsupportedStatePlaceholder({ stateName, appearanceData }) {
-  return (
-    <div
-      className="UnsupportedStatePlaceholder"
-      style={appearanceData}
-    >{`Unavailable`}</div>
-  );
+function UnsupportedStatePlaceholder() {
+  return <div className="UnsupportedStatePlaceholder">Unavailable</div>;
 }
 
 export default UnsupportedStatePlaceholder;

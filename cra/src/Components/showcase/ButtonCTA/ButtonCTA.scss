@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: var(--tint);
+    background-color: var(--ButtonCTA__bezel-background-color, green);
 
     cursor: pointer;
 
@@ -35,6 +35,6 @@
   }
 
   &__label {
-    color: var(--tint-inverse, white);
+    color: var(--ButtonCTA__label-text-color, white);
   }
 }

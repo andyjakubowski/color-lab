@@ -1,12 +1,10 @@
 .Checkbox {
-  --checkbox__background_idle: var(--tint);
-
   border-radius: 8px;
   width: 32px;
   height: 32px;
 
   background: url(../../../assets/icons/checkbox.svg);
-  background-color: var(--checkbox__background_idle);
+  background-color: var(--Checkbox__background_idle);
   background-size: 24px 24px;
   background-repeat: no-repeat;
   background-position: center;

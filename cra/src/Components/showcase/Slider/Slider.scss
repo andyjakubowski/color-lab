@@ -1,9 +1,6 @@
 .Slider {
-  --slider__track-background_idle: var(--fill);
-  --slider__track-progress_idle: var(--tint);
-
-  --slider-track-background: var(--slider__track-background_idle);
-  --slider-track-fill: var(--slider__track-progress_idle);
+  --slider-track-background: var(--Slider__track-background_idle);
+  --slider-track-fill: var(--Slider__track-progress_idle);
   --slider-track-height: 4;
   --slider-track-height-px: calc(var(--slider-track-height) * 1px);
   --slider-track-border: none;

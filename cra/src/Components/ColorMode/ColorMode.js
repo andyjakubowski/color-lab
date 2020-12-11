@@ -4,7 +4,11 @@ function ColorMode({ Component, appearanceData, componentStates, modeName }) {
   const states = componentStates.map((stateName, index) => (
     <div className="ColorMode__state-container" key={index.toString()}>
       <div className="ColorMode__component-container">
-        <Component appearanceData={appearanceData} componentState={stateName} />
+        <Component
+          colorModeName={modeName}
+          appearanceData={appearanceData}
+          componentState={stateName}
+        />
       </div>
       <div className="ColorMode__state-label">{stateName}</div>
     </div>

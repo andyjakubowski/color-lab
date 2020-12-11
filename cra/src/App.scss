@@ -10,6 +10,9 @@
 
   /* l stands for light mode */
 
+  --l-tint: tomato;
+  --l-tint-inverse: white;
+
   /* Label Colors */
   --l-label: #000;
   /* The color for text labels that contain primary content. */
@@ -76,6 +79,9 @@
   --l-link: var(--l-tint);
 
   /* d stands for light mode */
+
+  --d-tint: gold;
+  --d-tint-inverse: black;
 
   /* Label Colors */
   --d-label: #ffffff;
@@ -154,6 +160,64 @@
   /* --separator: hsla(0, 0%, 100%, 0.12); */
 
   --list-item__background: transparent;
+}
+
+.ButtonCTA.colorModeLight {
+  --ButtonCTA__bezel-background-color: var(--l-tint);
+  --ButtonCTA__label-text-color: var(--l-tint-inverse);
+}
+
+.ButtonCTA.colorModeDark {
+  --ButtonCTA__bezel-background-color: var(--d-tint);
+  --ButtonCTA__label-text-color: var(--d-tint-inverse);
+}
+
+.Label.colorModeLight {
+  --Label__label-text_idle: var(--l-label);
+}
+
+.Label.colorModeDark {
+  --Label__label-text_idle: var(--d-label);
+}
+
+.Slider.colorModeLight {
+  --Slider__track-background_idle: var(--l-fill);
+  --Slider__track-progress_idle: var(--l-tint);
+}
+
+.Slider.colorModeDark {
+  --Slider__track-background_idle: var(--d-fill);
+  --Slider__track-progress_idle: var(--d-tint);
+}
+
+.Checkbox.colorModeLight {
+  --Checkbox__background_idle: var(--l-tint);
+}
+
+.Checkbox.colorModeDark {
+  --Checkbox__background_idle: var(--d-tint);
+}
+
+.Radio.colorModeLight {
+  --Radio__background_idle: var(--l-tint);
+}
+
+.Radio.colorModeDark {
+  --Radio__background_idle: var(--d-tint);
+}
+
+.ListItem.colorModeLight {
+  --ListItem__separator-background_idle: var(--l-separator);
+  --ListItem__title-text_idle: var(--l-label);
+  --ListItem__subtitle-text_idle: var(--l-secondary-label);
+  --ListItem__background_idle: var(--l-background);
+}
+
+.ListItem.colorModeDark {
+  --ListItem__separator-background_idle: var(--d-separator);
+  --ListItem__title-text_idle: var(--d-label);
+  --ListItem__subtitle-text_idle: var(--d-secondary-label);
+  --ListItem__background_idle: var(--d-background);
 }
 
 .App {

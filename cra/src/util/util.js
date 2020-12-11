@@ -7,4 +7,21 @@ const getClassNames = function getClassNames(block, elements, modifier) {
   }, {});
 };
 
-export default getClassNames;
+const getColorModeClassName = function getColorModeClassName(modeName) {
+  let className;
+
+  switch (modeName) {
+    case 'Light Mode':
+      className = 'colorModeLight';
+      break;
+    case 'Dark Mode':
+      className = 'colorModeDark';
+      break;
+    default:
+      className = '';
+  }
+
+  return className;
+};
+
+export { getClassNames as default, getColorModeClassName };

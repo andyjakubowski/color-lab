@@ -11,7 +11,7 @@ import ListItem from './components/showcase/ListItem/ListItem';
 import colorModes from './colorModeData';
 
 function App() {
-  const defaultTint = 'green';
+  const defaultTint = 'pink';
 
   const updateTint = function updateTint(value) {
     document.documentElement.style.setProperty('--tint', value);
