@@ -19,18 +19,17 @@
 
     &_default:hover,
     &_hovered {
-      background-color: lighten(blue, 10%);
-      // filter: brightness(var(--brightness_hovered));
+      background-color: var(--ButtonCTA__bezel-background-color_hovered, red);
     }
 
     &_default:focus,
     &_focused {
-      filter: brightness(var(--brightness_focused));
+      background-color: var(--ButtonCTA__bezel-background-color_focused, red);
     }
 
     &_default:active,
     &_pressed {
-      filter: brightness(var(--brightness_pressed));
+      background-color: var(--ButtonCTA__bezel-background-color_pressed, red);
     }
 
     &_default:disabled,

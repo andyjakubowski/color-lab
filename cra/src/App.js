@@ -12,10 +12,9 @@ import ListItem from './components/showcase/ListItem/ListItem';
 import colorModesData from './colorModes';
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import colorModes from './colorModes';
+import ColorUtil from './util/ColorUtil';
 
 const updateRootStyles = function updateRootStyles(colorModes) {
-  console.log('updateRootStyles');
-
   colorModes.forEach((colorMode) => {
     const props = Object.entries(colorMode.props);
     props.forEach(([key, value]) => {
@@ -37,9 +36,14 @@ window.addEventListener('load', setVh);
 window.addEventListener('resize', setVh);
 
 function App() {
-  const initialTint = colorModes[0].props['--l-tint'];
+  // const initialTint = colorModes[0].props['--l-tint'];
+  const initialTint = useMemo(() => {
+    const hexColor = ColorUtil.getRandomHexColor();
+    const { h, s, l } = ColorUtil.hexToHslWithPercentageStrings(hexColor);
+    return { hex: hexColor, h, s, l };
+  }, []);
 
-  const [tintValue, setTintValue] = useState(initialTint);
+  const [tint, setTint] = useState(initialTint);
 
   const componentStates = useMemo(
     () => ['default', 'hovered', 'focused', 'pressed', 'selected', 'disabled'],
@@ -55,12 +59,19 @@ function App() {
   );
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--l-tint', tintValue);
-    document.documentElement.style.setProperty('--d-tint', tintValue);
+    document.documentElement.style.setProperty('--l-tint', tint.hex);
+    document.documentElement.style.setProperty('--l-tint-h', tint.h);
+    document.documentElement.style.setProperty('--l-tint-s', tint.s);
+    document.documentElement.style.setProperty('--l-tint-l', tint.l);
+    document.documentElement.style.setProperty('--d-tint', tint.hex);
+    document.documentElement.style.setProperty('--d-tint-h', tint.h);
+    document.documentElement.style.setProperty('--d-tint-s', tint.s);
+    document.documentElement.style.setProperty('--d-tint-l', tint.l);
   });
 
   const handleTintValueChange = useCallback(function handleTintValueChange(e) {
-    setTintValue(e.target.value);
+    const { h, s, l } = ColorUtil.hexToHslWithPercentageStrings(e.target.value);
+    setTint({ hex: e.target.value, h, s, l });
   }, []);
 
   return (
@@ -74,7 +85,7 @@ function App() {
       </div>
       {
         <div className="App__Inspector-container">
-          <Inspector tint={tintValue} onTintInput={handleTintValueChange} />
+          <Inspector tint={tint.hex} onTintInput={handleTintValueChange} />
         </div>
       }
     </div>

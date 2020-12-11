@@ -19,12 +19,50 @@
 }
 
 .ButtonCTA.colorModeLight {
-  --ButtonCTA__bezel-background-color: var(--l-tint);
+  --ButtonCTA__bezel-background-color: hsl(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    var(--l-tint-l)
+  );
+  --ButtonCTA__bezel-background-color_hovered: hsl(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) + 5%)
+  );
+  --ButtonCTA__bezel-background-color_focused: hsl(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) + 20%)
+  );
+  --ButtonCTA__bezel-background-color_pressed: hsl(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) - 10%)
+  );
   --ButtonCTA__label-text-color: var(--l-tint-inverse);
 }
 
 .ButtonCTA.colorModeDark {
-  --ButtonCTA__bezel-background-color: var(--d-tint);
+  --ButtonCTA__bezel-background-color: hsl(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    var(--d-tint-l)
+  );
+  --ButtonCTA__bezel-background-color_hovered: hsl(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) + 5%)
+  );
+  --ButtonCTA__bezel-background-color_focused: hsl(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) + 20%)
+  );
+  --ButtonCTA__bezel-background-color_pressed: hsl(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) - 10%)
+  );
   --ButtonCTA__label-text-color: var(--d-tint-inverse);
 }
 
