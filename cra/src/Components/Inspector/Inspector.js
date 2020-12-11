@@ -1,10 +1,20 @@
 import './Inspector.scss';
+import React, { useState } from 'react';
 
-function Inspector({ onColorPickerInput }) {
+function Inspector({ tint, onTintInput }) {
+  const [tintValue, setTintValue] = useState(tint);
+  console.log('Inspector, tintValue:', tintValue);
   const bemClass = function getClassName(element) {
     return `Inspector__${element}`;
   };
   const TINT_LABEL_TEXT = 'Tint';
+
+  const onInput = function onInput(e) {
+    setTintValue(e.target.value);
+    onTintInput(e.target.value);
+  };
+
+  // const pink = '#F63CB9';
 
   return (
     <div className={bemClass('container')}>
@@ -20,7 +30,8 @@ function Inspector({ onColorPickerInput }) {
             type="color"
             className={bemClass('tint-picker-input')}
             id="tint-picker"
-            onInput={onColorPickerInput}
+            onInput={onInput}
+            value={tintValue}
           />
         </div>
       </div>
