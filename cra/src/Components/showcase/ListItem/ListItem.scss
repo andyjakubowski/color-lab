@@ -1,7 +1,9 @@
 .ListItem {
+  width: 100%;
+  height: 56px;
+
   &__container {
-    width: 100%;
-    height: 56px;
+    height: 100%;
 
     display: flex;
     flex-direction: column;

@@ -9,9 +9,8 @@ function ComponentListItem({ Component, colorModes, componentStates }) {
     >
       <ColorMode
         Component={Component}
-        appearanceData={colorMode.data}
         componentStates={componentStates}
-        modeName={colorMode.name}
+        colorModeName={colorMode.name}
       />
     </div>
   ));

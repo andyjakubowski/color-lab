@@ -1,6 +1,6 @@
 .ColorMode {
   display: flex;
-  background-color: var(--background);
+  background-color: var(--ColorMode__background-color, lightgray);
 
   &__title {
     // padding: 0 24px;
@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
 
-    color: var(--tertiary-label);
+    color: var(--ColorMode__name-text-color, gray);
   }
 
   &__states {
@@ -21,6 +21,7 @@
     display: grid;
     grid-template-columns: repeat(6, var(--element-state-width));
     grid-template-rows: var(--element-state-height);
+    background-color: var(--ColorMode__background-color, lightgray);
   }
 
   &__state-container {
@@ -28,12 +29,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--background);
   }
 
   &__state-label {
     padding-top: 16px;
-    color: var(--quaternary-label);
+    color: var(--ColorMode__state-name-text-color, gray);
     text-align: center;
   }
 
@@ -41,7 +41,6 @@
     box-sizing: border-box;
     padding: 0 16px;
     width: 100%;
-    // flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;

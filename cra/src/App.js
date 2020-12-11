@@ -49,9 +49,9 @@ function App() {
           componentStates={componentStates}
         />
       </div>
-      <div className="App__Inspector-container">
+      {/* <div className="App__Inspector-container">
         <Inspector onColorPickerInput={(e) => handleColorPickerInput(e)} />
-      </div>
+      </div> */}
     </div>
   );
 }

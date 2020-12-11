@@ -17,7 +17,9 @@ function Slider({ componentState, colorModeName }) {
       </div>
     );
   } else {
-    returnElement = <UnsupportedStatePlaceholder />;
+    returnElement = (
+      <UnsupportedStatePlaceholder colorModeName={colorModeName} />
+    );
   }
 
   return returnElement;
