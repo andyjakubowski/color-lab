@@ -5,6 +5,7 @@ const tintInverse = 'white';
 const colorModes = [
   {
     name: 'Light Mode',
+    prefix: 'l',
     props: {
       '--l-tint': tint,
       '--l-tint-inverse': tintInverse,
@@ -30,6 +31,7 @@ const colorModes = [
   },
   {
     name: 'Dark Mode',
+    prefix: 'd',
     props: {
       '--d-tint': tint,
       '--d-tint-inverse': tintInverse,

@@ -1,5 +1,6 @@
 import './layoutHelp.scss';
 import './App.scss';
+import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
@@ -9,52 +10,58 @@ import Checkbox from './components/showcase/Checkbox/Checkbox';
 import Radio from './components/showcase/Radio/Radio';
 import ListItem from './components/showcase/ListItem/ListItem';
 import colorModesData from './colorModes';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import colorModes from './colorModes';
+
+const updateRootStyles = function updateRootStyles(colorModes) {
+  console.log('updateRootStyles');
+
+  colorModes.forEach((colorMode) => {
+    const props = Object.entries(colorMode.props);
+    props.forEach(([key, value]) => {
+      document.documentElement.style.setProperty(key, value);
+    });
+  });
+};
+updateRootStyles(colorModesData);
+
+const components = [ButtonCTA, Label, Slider, Checkbox, Radio, ListItem];
+
+const setVh = function setVh() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
+
+setVh();
+window.addEventListener('load', setVh);
+window.addEventListener('resize', setVh);
 
 function App() {
-  const [data, setData] = useState(colorModesData);
-  const [tint, setTint] = useState(colorModesData[0].props['--l-tint']);
+  const initialTint = colorModes[0].props['--l-tint'];
 
-  const colorModeNames = data.map((colorMode) => {
-    return { name: colorMode.name };
+  const [tintValue, setTintValue] = useState(initialTint);
+
+  const componentStates = useMemo(
+    () => ['default', 'hovered', 'focused', 'pressed', 'selected', 'disabled'],
+    []
+  );
+
+  const colorModeNames = useMemo(
+    () =>
+      colorModes.map((colorMode) => {
+        return { name: colorMode.name };
+      }),
+    []
+  );
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--l-tint', tintValue);
+    document.documentElement.style.setProperty('--d-tint', tintValue);
   });
 
-  const updateGlobalStyles = function updateGlobalStyles(colorModes) {
-    colorModes.forEach((colorMode) => {
-      const props = Object.entries(colorMode.props);
-      props.forEach(([key, value]) => {
-        document.documentElement.style.setProperty(key, value);
-      });
-    });
-  };
-
-  const updateTint = function updateTint(value) {
-    document.documentElement.style.setProperty('--l-tint', value);
-    document.documentElement.style.setProperty('--d-tint', value);
-  };
-
-  const handleTintValueChange = function handleTintValueChange(tintValue) {
-    updateTint(tintValue);
-  };
-  const componentStates = [
-    'default',
-    'hovered',
-    'focused',
-    'pressed',
-    'selected',
-    'disabled',
-  ];
-  const components = [ButtonCTA, Label, Slider, Checkbox, Radio, ListItem];
-
-  const setVh = function setVh() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  };
-
-  updateGlobalStyles(data);
-  setVh();
-  window.addEventListener('load', setVh);
-  window.addEventListener('resize', setVh);
+  const handleTintValueChange = useCallback(function handleTintValueChange(e) {
+    setTintValue(e.target.value);
+  }, []);
 
   return (
     <div className="App">
@@ -67,7 +74,7 @@ function App() {
       </div>
       {
         <div className="App__Inspector-container">
-          <Inspector tint={tint} onTintInput={handleTintValueChange} />
+          <Inspector tint={tintValue} onTintInput={handleTintValueChange} />
         </div>
       }
     </div>
