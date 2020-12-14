@@ -1,13 +1,68 @@
 .Checkbox {
-  border-radius: 8px;
-  width: 32px;
-  height: 32px;
+  &__input {
+    --Checkbox__background: var(--Checkbox__background_idle);
+    position: relative;
+    appearance: none;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
 
-  background: url(../../../assets/icons/checkbox.svg);
-  background-color: var(--Checkbox__background_idle);
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-position: center;
+    // background: url(../../../assets/icons/checkbox.svg);
+    background-color: var(--Checkbox__background);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
 
-  cursor: pointer;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      box-sizing: border-box;
+      content: '';
+      margin-block-end: 3px;
+      width: 7px;
+      height: 13px;
+      border: 2px solid var(--l-tint-inverse);
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(43deg);
+      opacity: var(--Checkbox__checkmark-opacity, 0);
+    }
+
+    &:checked {
+      --Checkbox__checkmark-opacity: 1;
+      --Checkbox__background: var(--Checkbox__background_checked);
+
+      &:hover {
+        --Checkbox__background: var(--Checkbox__background_checked-hovered);
+      }
+
+      &:active {
+        --Checkbox__background: var(--Checkbox__background_checked-pressed);
+      }
+    }
+
+    &_default:hover,
+    &_hovered {
+      --Checkbox__background: var(--Checkbox__background_hovered);
+    }
+
+    &_default:focus,
+    &_focused {
+      --Checkbox__background: var(--Checkbox__background_focused);
+    }
+
+    &_default:active,
+    &_pressed {
+      --Checkbox__background: var(--Checkbox__background_pressed);
+    }
+
+    &_default:disabled,
+    &_disabled {
+      --Checkbox__background: var(--Checkbox__background_disabled);
+    }
+  }
 }

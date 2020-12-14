@@ -94,11 +94,71 @@
 }
 
 .Checkbox.colorModeLight {
-  --Checkbox__background_idle: var(--l-tint);
+  --Checkbox__background_idle: var(--l-fill);
+  --Checkbox__background_hovered: hsla(
+    var(--l-fill-h),
+    var(--l-fill-s),
+    calc(var(--l-fill-l) + 10%),
+    var(--l-fill-a)
+  );
+  --Checkbox__background_focused: hsla(
+    var(--l-fill-h),
+    var(--l-fill-s),
+    calc(var(--l-fill-l) + 10%),
+    var(--l-fill-a)
+  );
+  --Checkbox__background_pressed: hsla(
+    var(--l-fill-h),
+    var(--l-fill-s),
+    calc(var(--l-fill-l) - 12%),
+    var(--l-fill-a)
+  );
+  --Checkbox__background_checked: var(--l-tint);
+  --Checkbox__background_checked-hovered: hsla(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) + 6%)
+  );
+  --Checkbox__background_checked-pressed: hsla(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) - 4%)
+  );
+  --Checkbox__background_disabled: var(--l-quaternary-fill);
 }
 
 .Checkbox.colorModeDark {
-  --Checkbox__background_idle: var(--d-tint);
+  --Checkbox__background_idle: var(--d-fill);
+  --Checkbox__background_hovered: hsla(
+    var(--d-fill-h),
+    var(--d-fill-s),
+    calc(var(--d-fill-l) + 10%),
+    var(--d-fill-a)
+  );
+  --Checkbox__background_focused: hsla(
+    var(--d-fill-h),
+    var(--d-fill-s),
+    calc(var(--d-fill-l) + 10%),
+    var(--d-fill-a)
+  );
+  --Checkbox__background_pressed: hsla(
+    var(--d-fill-h),
+    var(--d-fill-s),
+    calc(var(--d-fill-l) - 12%),
+    var(--d-fill-a)
+  );
+  --Checkbox__background_checked: var(--d-tint);
+  --Checkbox__background_checked-hovered: hsla(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) + 6%)
+  );
+  --Checkbox__background_checked-pressed: hsla(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) - 4%)
+  );
+  --Checkbox__background_disabled: var(--d-quaternary-fill);
 }
 
 .Radio.colorModeLight {

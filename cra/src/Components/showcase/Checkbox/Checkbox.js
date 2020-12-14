@@ -1,6 +1,6 @@
 import './Checkbox.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import { getColorModeClassName } from '../../../util/util';
+import getClassNames, { getColorModeClassName } from '../../../util/util';
 
 function Checkbox({ componentState, colorModeName }) {
   const supportedStates = [
@@ -11,8 +11,11 @@ function Checkbox({ componentState, colorModeName }) {
     'selected',
     'disabled',
   ];
-  const block = `Checkbox`;
   const isStateSupported = supportedStates.includes(componentState);
+  const block = `Checkbox`;
+  const elements = ['input'];
+  const modifier = componentState;
+  const classNames = getClassNames(block, elements, modifier);
   const colorModeClassName = getColorModeClassName(colorModeName);
 
   let returnElement;
@@ -20,7 +23,7 @@ function Checkbox({ componentState, colorModeName }) {
   if (isStateSupported) {
     returnElement = (
       <div className={`${block} ${colorModeClassName}`}>
-        <div className="Checkbox"></div>
+        <input type="checkbox" className={classNames.input}></input>
       </div>
     );
   } else {
