@@ -1,13 +1,59 @@
 .Radio {
-  border-radius: 16px;
-  width: 32px;
-  height: 32px;
+  &__input {
+    --Radio__background: var(--Radio__background_idle);
+    appearance: none;
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
 
-  background: url(../../../assets/icons/radio.svg);
-  background-color: var(--Radio__background_idle);
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-position: center;
+    background-color: var(--Radio__background);
 
-  cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      opacity: var(--Radio__circle-opacity, 0);
+      background-color: var(--l-tint-inverse);
+    }
+
+    &:checked {
+      --Radio__circle-opacity: 1;
+      --Radio__background: var(--Radio__background_checked);
+
+      &:hover {
+        --Radio__background: var(--Radio__background_checked-hovered);
+      }
+
+      &:active {
+        --Radio__background: var(--Radio__background_checked-pressed);
+      }
+    }
+
+    &_default:hover,
+    &_hovered {
+      --Radio__background: var(--Radio__background_hovered);
+    }
+
+    &_default:focus,
+    &_focused {
+      --Radio__background: var(--Radio__background_focused);
+    }
+
+    &_default:active,
+    &_pressed {
+      --Radio__background: var(--Radio__background_pressed);
+    }
+
+    &_default:disabled,
+    &_disabled {
+      --Radio__background: var(--Radio__background_disabled);
+    }
+  }
 }

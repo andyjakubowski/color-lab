@@ -1,23 +1,18 @@
 .Checkbox {
   &__input {
     --Checkbox__background: var(--Checkbox__background_idle);
-    position: relative;
     appearance: none;
     border-radius: 8px;
     width: 32px;
     height: 32px;
-
-    // background: url(../../../assets/icons/checkbox.svg);
-    background-color: var(--Checkbox__background);
-    background-size: 24px 24px;
-    background-repeat: no-repeat;
-    background-position: center;
 
     cursor: pointer;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: var(--Checkbox__background);
 
     &::after {
       box-sizing: border-box;

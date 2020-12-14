@@ -1,6 +1,6 @@
 import './Radio.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import { getColorModeClassName } from '../../../util/util';
+import getClassNames, { getColorModeClassName } from '../../../util/util';
 
 function Radio({ componentState, colorModeName }) {
   const supportedStates = [
@@ -11,8 +11,11 @@ function Radio({ componentState, colorModeName }) {
     'selected',
     'disabled',
   ];
-  const block = `Radio`;
   const isStateSupported = supportedStates.includes(componentState);
+  const block = `Radio`;
+  const elements = ['input'];
+  const modifier = componentState;
+  const classNames = getClassNames(block, elements, modifier);
   const colorModeClassName = getColorModeClassName(colorModeName);
 
   let returnElement;
@@ -20,7 +23,7 @@ function Radio({ componentState, colorModeName }) {
   if (isStateSupported) {
     returnElement = (
       <div className={`${block} ${colorModeClassName}`}>
-        <div className="Radio"></div>
+        <input type="radio" className={classNames.input}></input>
       </div>
     );
   } else {
