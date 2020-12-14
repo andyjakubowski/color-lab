@@ -34,11 +34,15 @@
 
     &_default:disabled,
     &_disabled {
-      background-color: gray;
+      background-color: var(--ButtonCTA__bezel-background-color_disabled, red);
     }
   }
 
   &__label {
     color: var(--ButtonCTA__label-text-color, white);
+
+    &_disabled {
+      color: var(--ButtonCTA__label-text-color_disabled, white);
+    }
   }
 }
