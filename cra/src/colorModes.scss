@@ -80,13 +80,17 @@
 }
 
 .Slider.colorModeLight {
-  --Slider__track-background_idle: var(--l-fill);
   --Slider__track-progress_idle: var(--l-tint);
+  --Slider__track-background_idle: var(--l-fill);
+  --Slider__track-progress_disabled: var(--l-tertiary-fill);
+  --Slider__track-background_disabled: var(--l-quaternary-fill);
 }
 
 .Slider.colorModeDark {
-  --Slider__track-background_idle: var(--d-fill);
   --Slider__track-progress_idle: var(--d-tint);
+  --Slider__track-background_idle: var(--d-fill);
+  --Slider__track-progress_disabled: var(--d-tertiary-fill);
+  --Slider__track-background_disabled: var(--d-quaternary-fill);
 }
 
 .Checkbox.colorModeLight {

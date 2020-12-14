@@ -19,7 +19,7 @@
     --element-state-height: calc(var(--element-state-size) * 1px);
 
     display: grid;
-    grid-template-columns: repeat(6, var(--element-state-width));
+    grid-template-columns: repeat(5, var(--element-state-width));
     grid-template-rows: var(--element-state-height);
     background-color: var(--ColorMode__background-color, lightgray);
   }

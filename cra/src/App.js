@@ -46,7 +46,7 @@ function App() {
   const [tint, setTint] = useState(initialTint);
 
   const componentStates = useMemo(
-    () => ['default', 'hovered', 'focused', 'pressed', 'selected', 'disabled'],
+    () => ['default', 'hovered', 'pressed', 'selected', 'disabled'],
     []
   );
 
