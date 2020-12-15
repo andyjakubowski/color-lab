@@ -54,6 +54,7 @@
     &_default:disabled,
     &_disabled {
       --Radio__background: var(--Radio__background_disabled);
+      pointer-events: none;
     }
   }
 }
