@@ -14,9 +14,9 @@
   }
 
   &__states {
-    --element-state-size: 240;
+    --element-state-size: 288;
     --element-state-width: calc(var(--element-state-size) * 1px);
-    --element-state-height: calc(var(--element-state-size) * 1px);
+    --element-state-height: calc(var(--element-state-size) * 0.75px);
 
     display: grid;
     grid-template-columns: repeat(5, var(--element-state-width));
