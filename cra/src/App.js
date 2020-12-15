@@ -6,6 +6,7 @@ import Inspector from './components/Inspector/Inspector';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
 import Label from './components/showcase/Label/Label';
 import Slider from './components/showcase/Slider/Slider';
+import Switch from './components/showcase/Switch/Switch';
 import Checkbox from './components/showcase/Checkbox/Checkbox';
 import Radio from './components/showcase/Radio/Radio';
 import ListItem from './components/showcase/ListItem/ListItem';
@@ -24,7 +25,15 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 };
 updateRootStyles(colorModesData);
 
-const components = [ButtonCTA, Label, Slider, Checkbox, Radio, ListItem];
+const components = [
+  ButtonCTA,
+  Switch,
+  Checkbox,
+  Radio,
+  ListItem,
+  Slider,
+  Label,
+];
 
 const setVh = function setVh() {
   const vh = window.innerHeight * 0.01;

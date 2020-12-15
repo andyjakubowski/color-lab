@@ -93,6 +93,40 @@
   --Slider__track-background_disabled: var(--d-quaternary-fill);
 }
 
+.Switch.colorModeLight {
+  --Switch__background_idle: var(--l-secondary-fill);
+  --Switch__background_pressed: hsla(
+    var(--l-secondary-fill-h),
+    var(--l-secondary-fill-s),
+    calc(var(--l-secondary-fill-l) - 12%),
+    var(--l-secondary-fill-a)
+  );
+  --Switch__background_checked: var(--l-tint);
+  --Switch__background_checked-pressed: hsla(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) - 4%)
+  );
+  --Switch__background_disabled: var(--l-quaternary-fill);
+}
+
+.Switch.colorModeDark {
+  --Switch__background_idle: var(--d-secondary-fill);
+  --Switch__background_pressed: hsla(
+    var(--d-secondary-fill-h),
+    var(--d-secondary-fill-s),
+    calc(var(--d-secondary-fill-l) - 12%),
+    var(--d-secondary-fill-a)
+  );
+  --Switch__background_checked: var(--d-tint);
+  --Switch__background_checked-pressed: hsla(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) - 4%)
+  );
+  --Switch__background_disabled: var(--d-quaternary-fill);
+}
+
 .Checkbox.colorModeLight {
   --Checkbox__background_idle: var(--l-fill);
   --Checkbox__background_hovered: hsla(

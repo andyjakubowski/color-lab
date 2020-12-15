@@ -1,0 +1,53 @@
+.Switch {
+  &__input {
+    --Switch__background: var(--Switch__background_idle);
+    --Switch__thumb-x_off: 0;
+    --Switch__thumb-x_on: 20px;
+    --Switch__thumb-x: var(--Switch__thumb-x_off);
+    appearance: none;
+    padding: 2px;
+    border-radius: 15.5px;
+    width: 51px;
+    height: 31px;
+
+    cursor: pointer;
+    background-color: var(--Switch__background);
+
+    &::after {
+      box-sizing: border-box;
+      content: '';
+      display: block;
+      border-radius: 13.5px;
+      --Switch__thumb-box-shadow_1: 0 0 0 0.5px hsla(0, 0%, 0%, 0.04);
+      --Switch__thumb-box-shadow_2: 0 3px 8px hsla(0, 0%, 0%, 0.15);
+      --Switch__thumb-box-shadow_3: 0 3px 1px hsla(0, 0%, 0%, 0.06);
+      box-shadow: var(--Switch__thumb-box-shadow_1),
+        var(--Switch__thumb-box-shadow_2), var(--Switch__thumb-box-shadow_3);
+      width: 27px;
+      height: 27px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      transform: translateX(var(--Switch__thumb-x));
+      background-color: white;
+    }
+
+    &:checked {
+      --Switch__thumb-x: var(--Switch__thumb-x_on);
+      --Switch__background: var(--Switch__background_checked);
+
+      &:active {
+        --Switch__background: var(--Switch__background_checked-pressed);
+      }
+    }
+
+    &_default:active,
+    &_pressed {
+      --Switch__background: var(--Switch__background_pressed);
+    }
+
+    &_default:disabled,
+    &_disabled {
+      --Switch__background: var(--Switch__background_disabled);
+      pointer-events: none;
+    }
+  }
+}
