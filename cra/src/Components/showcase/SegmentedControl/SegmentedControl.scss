@@ -1,0 +1,121 @@
+.SegmentedControl {
+  position: relative;
+  --SegmentedControl__padding: 2px;
+  --SegmentedControl__width: 100%;
+  --SegmentedControl__segments-container-width: calc(
+    var(--SegmentedControl__width) - 2 * var(--SegmentedControl__padding)
+  );
+  --SegmentedControl__height: calc(32px - 2 * var(--SegmentedControl__padding));
+  --SegmentedControl__corner-radius: 9px;
+  width: var(--SegmentedControl__width);
+  height: var(--SegmentedControl__height);
+  padding: var(--SegmentedControl__padding);
+
+  --SegmentedControl__segment-title-font-weight_default: 500;
+  --SegmentedControl__segment-title-font-weight_selected: 600;
+  --SegmentedControl__segment-title-font-weight: var(
+    --SegmentedControl__segment-title-font-weight_default
+  );
+  --SegmentedControl__segment-title-font-size_default: 13px;
+  --SegmentedControl__segment-title-font-size_selected: 14px;
+  --SegmentedControl__segment-title-font-size: var(
+    --SegmentedControl__segment-title-font-size_default
+  );
+
+  --SegmentedControl__segment-count: var(
+    --Global-SegmentedControl__segment-count,
+    5
+  );
+  --SegmentedControl__selected-segment-index: 0;
+  --SegmentedControl__selection-indicator-width: calc(
+    100% / var(--SegmentedControl__segment-count)
+  );
+
+  --SegmentedControl__selection-indicator-corner-radius: calc(
+    var(--SegmentedControl__corner-radius) - var(--SegmentedControl__padding)
+  );
+
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: var(--SegmentedControl__background-color);
+  overflow: hidden;
+
+  &__segmentsContainer {
+    position: absolute;
+    top: var(--SegmentedControl__padding);
+    right: var(--SegmentedControl__padding);
+    bottom: var(--SegmentedControl__padding);
+    left: var(--SegmentedControl__padding);
+    display: flex;
+  }
+
+  &__selectedSegmentIndicator {
+    width: var(--SegmentedControl__selection-indicator-width);
+    height: 100%;
+    border-radius: var(--SegmentedControl__selection-indicator-corner-radius);
+    background-color: var(--SegmentedControl__selection-indicator-background);
+    transition: transform
+      var(--SegmentedControl__selection-indicator-animation-time) ease;
+    --SegmentedControl__selection-indicator-x: calc(
+      var(--SegmentedControl__selected-segment-index) * 100%
+    );
+    transform: translateX(var(--SegmentedControl__selection-indicator-x));
+    --SegmentedControl__selection-indicator-box-shadow_1: 0 0 0 0.5px
+      hsla(0, 0%, 0%, 0.04);
+    --SegmentedControl__selection-indicator-box-shadow_2: 0 3px 8px
+      hsla(0, 0%, 0%, 0.12);
+    --SegmentedControl__selection-indicator-box-shadow_3: 0 3px 1px
+      hsla(0, 0%, 0%, 0.04);
+    box-shadow: var(--SegmentedControl__selection-indicator-box-shadow_1),
+      var(--SegmentedControl__selection-indicator-box-shadow_2),
+      var(--SegmentedControl__selection-indicator-box-shadow_3);
+  }
+
+  &__segment {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+      &::before {
+        display: block;
+        content: '';
+        width: 1px;
+        height: 16px;
+        border-radius: 0.5px;
+        background-color: var(--SegmentedControl__divider-background);
+        transition: background-color
+          var(--SegmentedControl__divider-animation-time) linear;
+      }
+    }
+
+    &.selectedSegment {
+      --SegmentedControl__segment-title-font-weight: var(
+        --SegmentedControl__segment-title-font-weight_selected
+      );
+    }
+
+    &.segmentDividerHidden {
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__segmentContent {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__segmentTitle {
+    font-size: var(--SegmentedControl__segment-title-font-size);
+    font-weight: var(--SegmentedControl__segment-title-font-weight);
+    text-align: center;
+    color: var(--SegmentedControl__segment-title-color);
+  }
+}

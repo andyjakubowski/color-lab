@@ -18,6 +18,34 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.SegmentedControl.colorModeLight {
+  --SegmentedControl__background-color: var(--l-secondary-fill);
+  --SegmentedControl__selection-indicator-background: white;
+  --SegmentedControl__selection-indicator-animation-time: var(
+    --l-animation-time-medium
+  );
+  --SegmentedControl__divider-background: var(--l-fill);
+  --SegmentedControl__divider-animation-time: var(--l-animation-time-short);
+  --SegmentedControl__segment-title-color: var(--l-label);
+  --SegmentedControl__segment-title-animation-time: var(
+    --l-animation-time-short
+  );
+}
+
+.SegmentedControl.colorModeDark {
+  --SegmentedControl__background-color: var(--d-tertiary-fill);
+  --SegmentedControl__selection-indicator-background: var(--d-system-grey2);
+  --SegmentedControl__selection-indicator-animation-time: var(
+    --d-animation-time-medium
+  );
+  --SegmentedControl__divider-background: var(--d-fill);
+  --SegmentedControl__divider-animation-time: var(--d-animation-time-short);
+  --SegmentedControl__segment-title-color: var(--d-label);
+  --SegmentedControl__segment-title-animation-time: var(
+    --l-animation-time-short
+  );
+}
+
 .ButtonCTA.colorModeLight {
   --ButtonCTA__bezel-background-color: hsl(
     var(--l-tint-h),

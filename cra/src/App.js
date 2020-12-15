@@ -4,6 +4,7 @@ import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
+import SegmentedControl from './components/showcase/SegmentedControl/SegmentedControl';
 import Label from './components/showcase/Label/Label';
 import Slider from './components/showcase/Slider/Slider';
 import Switch from './components/showcase/Switch/Switch';
@@ -26,8 +27,9 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
-  ButtonCTA,
+  SegmentedControl,
   Switch,
+  ButtonCTA,
   Checkbox,
   Radio,
   ListItem,
@@ -45,7 +47,6 @@ window.addEventListener('load', setVh);
 window.addEventListener('resize', setVh);
 
 function App() {
-  // const initialTint = colorModes[0].props['--l-tint'];
   const initialTint = useMemo(() => {
     const hexColor = ColorUtil.getRandomHexColor();
     const { h, s, l } = ColorUtil.hexToHslWithPercentageStrings(hexColor);
