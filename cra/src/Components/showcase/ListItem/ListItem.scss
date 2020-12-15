@@ -1,26 +1,100 @@
 .ListItem {
   width: 100%;
-  height: 56px;
+  height: 64px;
+
+  --ListItem__background: var(--ListItem__background_idle);
+  --ListItem__separator-background: var(--ListItem__separator-background_idle);
+  --ListItem__title-text: var(--ListItem__title-text_idle);
+  --ListItem__subtitle-text: var(--ListItem__subtitle-text_idle);
+  --ListItem__opacity: 1;
 
   &__container {
     height: 100%;
+    border-radius: 5px;
 
     display: flex;
     flex-direction: column;
 
-    background-color: var(--ListItem__background_idle);
+    background-color: var(--ListItem__background);
+    opacity: var(--ListItem__opacity);
+
+    cursor: pointer;
+
+    &_hovered,
+    &_pressed,
+    &_disabled {
+      pointer-events: none;
+    }
+
+    &_default {
+      &:hover {
+        --ListItem__background: var(--ListItem__background_hovered);
+        --ListItem__separator-background: var(
+          --ListItem__separator-background_hovered
+        );
+      }
+
+      &:active {
+        --ListItem__background: var(--ListItem__background_pressed);
+        --ListItem__separator-background: var(
+          --ListItem__separator-background_pressed
+        );
+      }
+    }
+
+    &_hovered {
+      --ListItem__background: var(--ListItem__background_hovered);
+      --ListItem__separator-background: var(
+        --ListItem__separator-background_hovered
+      );
+    }
+
+    &_pressed {
+      --ListItem__background: var(--ListItem__background_pressed);
+      --ListItem__separator-background: var(
+        --ListItem__separator-background_pressed
+      );
+    }
+
+    &_selected {
+      --ListItem__background: var(--ListItem__background_selected);
+      --ListItem__separator-background: var(
+        --ListItem__separator-background_selected
+      );
+      --ListItem__title-text: var(--ListItem__title-text_selected);
+      --ListItem__subtitle-text: var(--ListItem__subtitle-text_selected);
+
+      &:hover {
+        --ListItem__background: var(--ListItem__background_selected-hovered);
+        --ListItem__separator-background: var(
+          --ListItem__separator-background_hovered
+        );
+      }
+
+      &:active {
+        --ListItem__background: var(--ListItem__background_selected-pressed);
+        --ListItem__separator-background: var(
+          --ListItem__separator-background_pressed
+        );
+      }
+    }
+
+    &:disabled,
+    &_disabled {
+      --ListItem__opacity: var(--ListItem__opacity_disabled);
+    }
   }
 
   &__separator {
     height: 0.5px;
 
-    background-color: var(--ListItem__separator-background_idle);
+    background-color: var(--ListItem__separator-background);
   }
 
   &__content {
     flex-grow: 1;
 
-    padding: 0 16px;
+    padding: 8px 16px;
 
     display: flex;
     flex-direction: column;
@@ -28,10 +102,11 @@
   }
 
   &__title {
-    color: var(--ListItem__title-text_idle);
+    color: var(--ListItem__title-text);
+    font-weight: bold;
   }
 
   &__subtitle {
-    color: var(--ListItem__subtitle-text_idle);
+    color: var(--ListItem__subtitle-text);
   }
 }

@@ -216,12 +216,12 @@
     var(--d-fill-a)
   );
   --Radio__background_checked: var(--d-tint);
-  --Radio__background_checked-hovered: hsla(
+  --Radio__background_checked-hovered: hsl(
     var(--d-tint-h),
     var(--d-tint-s),
     calc(var(--d-tint-l) + 6%)
   );
-  --Radio__background_checked-pressed: hsla(
+  --Radio__background_checked-pressed: hsl(
     var(--d-tint-h),
     var(--d-tint-s),
     calc(var(--d-tint-l) - 4%)
@@ -230,15 +230,76 @@
 }
 
 .ListItem.colorModeLight {
+  --ListItem__opacity_disabled: 0.5;
   --ListItem__separator-background_idle: var(--l-separator);
+  --ListItem__separator-background_hovered: transparent;
+  --ListItem__separator-background_pressed: transparent;
+  --ListItem__separator-background_selected: transparent;
   --ListItem__title-text_idle: var(--l-label);
+  --ListItem__title-text_disabled: hsla(
+    var(--l-label-h),
+    var(--l-label-s),
+    var(--l-label-l),
+    calc(var(--l-label-a) * 0.5)
+  );
+  --ListItem__title-text_selected: var(--l-tint-inverse);
   --ListItem__subtitle-text_idle: var(--l-secondary-label);
+  --ListItem__subtitle-text_disabled: var(--l-secondary-label);
+  --ListItem__subtitle-text_selected: var(--l-tint-inverse);
   --ListItem__background_idle: var(--l-background);
+  --ListItem__background_hovered: var(--l-fill);
+  --ListItem__background_pressed: hsla(
+    var(--l-fill-h),
+    var(--l-fill-s),
+    calc(var(--l-fill-l) - 16%),
+    var(--l-fill-a)
+  );
+  --ListItem__background_selected: var(--l-tint);
+  --ListItem__background_selected-hovered: hsl(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) + 2%)
+  );
+  --ListItem__background_selected-pressed: hsl(
+    var(--l-tint-h),
+    var(--l-tint-s),
+    calc(var(--l-tint-l) - 2%)
+  );
 }
 
 .ListItem.colorModeDark {
+  --ListItem__opacity_disabled: 0.5;
   --ListItem__separator-background_idle: var(--d-separator);
+  --ListItem__separator-background_hovered: transparent;
+  --ListItem__separator-background_pressed: transparent;
+  --ListItem__separator-background_selected: transparent;
   --ListItem__title-text_idle: var(--d-label);
+  --ListItem__title-text_disabled: hsla(
+    var(--d-label-h),
+    var(--d-label-s),
+    var(--d-label-l),
+    calc(var(--d-label-a) / 2)
+  );
+  --ListItem__title-text_selected: var(--d-tint-inverse);
   --ListItem__subtitle-text_idle: var(--d-secondary-label);
+  --ListItem__subtitle-text_selected: var(--d-tint-inverse);
   --ListItem__background_idle: var(--d-background);
+  --ListItem__background_hovered: var(--d-fill);
+  --ListItem__background_pressed: hsla(
+    var(--d-fill-h),
+    var(--d-fill-s),
+    calc(var(--d-fill-l) - 16%),
+    var(--d-fill-a)
+  );
+  --ListItem__background_selected: var(--d-tint);
+  --ListItem__background_selected-hovered: hsl(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) + 2%)
+  );
+  --ListItem__background_selected-pressed: hsl(
+    var(--d-tint-h),
+    var(--d-tint-s),
+    calc(var(--d-tint-l) - 2%)
+  );
 }
