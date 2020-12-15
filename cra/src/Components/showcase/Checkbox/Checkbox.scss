@@ -58,6 +58,7 @@
     &_default:disabled,
     &_disabled {
       --Checkbox__background: var(--Checkbox__background_disabled);
+      pointer-events: none;
     }
   }
 }
