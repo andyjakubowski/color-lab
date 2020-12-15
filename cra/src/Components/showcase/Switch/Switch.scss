@@ -12,6 +12,13 @@
 
     cursor: pointer;
     background-color: var(--Switch__background);
+    transition: background-color 0.3s ease;
+
+    &_hovered,
+    &_pressed,
+    &_disabled {
+      pointer-events: none;
+    }
 
     &::after {
       box-sizing: border-box;
@@ -25,7 +32,7 @@
         var(--Switch__thumb-box-shadow_2), var(--Switch__thumb-box-shadow_3);
       width: 27px;
       height: 27px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      transition: transform 0.3s ease;
       transform: translateX(var(--Switch__thumb-x));
       background-color: white;
     }
@@ -47,7 +54,6 @@
     &_default:disabled,
     &_disabled {
       --Switch__background: var(--Switch__background_disabled);
-      pointer-events: none;
     }
   }
 }
