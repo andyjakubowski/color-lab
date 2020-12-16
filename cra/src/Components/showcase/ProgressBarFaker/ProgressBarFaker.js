@@ -10,10 +10,10 @@ function ProgressBarFaker({ componentState, colorModeName }) {
   const maxProgressRate = 1.0;
   const startProgressRate = 0.2;
   const [progressRate, setProgressRate] = useState(startProgressRate);
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [isPaused, setIsPaused] = useState(true);
 
   useEffect(() => {
-    if (!isAnimating) {
+    if (!isPaused) {
       return;
     }
 
@@ -49,17 +49,14 @@ function ProgressBarFaker({ componentState, colorModeName }) {
       clearInterval(intervalId);
     };
     return cleanUp;
-  }, [progressRate, isAnimating]);
+  }, [progressRate, isPaused]);
 
   if (!isStateSupported) {
     return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
   }
 
   return (
-    <div
-      className="ProgressBarFaker"
-      onClick={() => setIsAnimating(!isAnimating)}
-    >
+    <div className="ProgressBarFaker" onClick={() => setIsPaused(!isPaused)}>
       <ProgressBar
         componentState={componentState}
         colorModeName={colorModeName}
