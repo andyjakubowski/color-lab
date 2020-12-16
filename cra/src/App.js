@@ -6,6 +6,7 @@ import Inspector from './components/Inspector/Inspector';
 import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
 import SegmentedControl from './components/showcase/SegmentedControl/SegmentedControl';
 import ProgressBarFaker from './components/showcase/ProgressBarFaker/ProgressBarFaker';
+import StepperFaker from './components/showcase/Stepper/StepperFaker';
 import Label from './components/showcase/Label/Label';
 import Slider from './components/showcase/Slider/Slider';
 import Switch from './components/showcase/Switch/Switch';
@@ -28,6 +29,7 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
+  StepperFaker,
   ProgressBarFaker,
   SegmentedControl,
   Switch,

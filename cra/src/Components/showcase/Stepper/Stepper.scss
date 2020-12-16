@@ -1,0 +1,61 @@
+.Stepper {
+  --width: 96px;
+  --height: 32px;
+  --corner-radius: 9px;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--corner-radius);
+
+  background-color: var(--container__background, gray);
+  overflow: hidden;
+
+  &__segmentsContainer {
+    height: 100%;
+    display: flex;
+  }
+
+  &__segmentContainer {
+    --divider-width: 1px;
+    --segment-symbol__color: var(--segment-symbol__color_default);
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+    border-radius: var(--corner-radius);
+
+    display: flex;
+
+    cursor: pointer;
+
+    &:active {
+      background-color: var(--segment-background_pressed);
+    }
+
+    &_disabled {
+      --segment-symbol__color: var(--segment-symbol__color_disabled);
+      pointer-events: none;
+    }
+  }
+
+  &__segmentContent {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__segmentSymbol {
+    fill: var(--segment-symbol__color);
+  }
+
+  &__decrement {
+    &::after {
+      content: '';
+      align-self: center;
+      width: var(--divider-width);
+      height: 16px;
+      border-radius: 0.5px;
+      background-color: var(--divider__background);
+    }
+  }
+}

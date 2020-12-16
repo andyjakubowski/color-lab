@@ -18,6 +18,30 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.Stepper.colorModeLight {
+  --container__background: var(--l-tertiary-fill);
+  --segment-background_pressed: var(--l-fill);
+  --segment-symbol__color_default: var(--l-label);
+  --segment-symbol__color_disabled: var(--l-quaternary-label);
+  --divider__background: var(--l-fill);
+}
+
+.Stepper.colorModeDark {
+  --container__background: var(--d-tertiary-fill);
+  --segment-background_pressed: var(--d-fill);
+  --segment-symbol__color_default: var(--d-label);
+  --segment-symbol__color_disabled: var(--d-quaternary-label);
+  --divider__background: var(--d-fill);
+}
+
+.StepperFaker.colorModeLight {
+  --label__text-color: var(--l-secondary-label);
+}
+
+.StepperFaker.colorModeDark {
+  --label__text-color: var(--d-secondary-label);
+}
+
 .ProgressBar.colorModeLight {
   --ProgressBar__track-background: var(--l-fill);
   --ProgressBar__progress-background: var(--l-tint);
