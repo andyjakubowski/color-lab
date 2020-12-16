@@ -1,3 +1,4 @@
+import './ProgressBarFaker.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import React, { useState, useEffect } from 'react';
@@ -9,8 +10,13 @@ function ProgressBarFaker({ componentState, colorModeName }) {
   const maxProgressRate = 1.0;
   const startProgressRate = 0.2;
   const [progressRate, setProgressRate] = useState(startProgressRate);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
+    if (!isAnimating) {
+      return;
+    }
+
     const minProgressIncrease = 0.0016;
     const maxProgressIncrease = 0.0053 * 4;
     const getRandomArbitrary = function getRandomArbitrary(min, max) {
@@ -43,18 +49,23 @@ function ProgressBarFaker({ componentState, colorModeName }) {
       clearInterval(intervalId);
     };
     return cleanUp;
-  }, [progressRate]);
+  }, [progressRate, isAnimating]);
 
   if (!isStateSupported) {
     return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
   }
 
   return (
-    <ProgressBar
-      componentState={componentState}
-      colorModeName={colorModeName}
-      progressRate={progressRate}
-    />
+    <div
+      className="ProgressBarFaker"
+      onClick={() => setIsAnimating(!isAnimating)}
+    >
+      <ProgressBar
+        componentState={componentState}
+        colorModeName={colorModeName}
+        progressRate={progressRate}
+      />
+    </div>
   );
 }
 
