@@ -18,6 +18,18 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.ProgressBar.colorModeLight {
+  --ProgressBar__track-background: var(--l-fill);
+  --ProgressBar__progress-background: var(--l-tint);
+  --ProgressBar__progress-animation-time: var(--l-animation-time-short);
+}
+
+.ProgressBar.colorModeDark {
+  --ProgressBar__track-background: var(--d-fill);
+  --ProgressBar__progress-background: var(--d-tint);
+  --ProgressBar__progress-animation-time: var(--d-animation-time-short);
+}
+
 .SegmentedControl.colorModeLight {
   --SegmentedControl__background-color: var(--l-secondary-fill);
   --SegmentedControl__selection-indicator-background: white;

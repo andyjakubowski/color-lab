@@ -1,0 +1,19 @@
+.ProgressBar {
+  --height: 4px;
+  --corner-radius: calc(var(--height) / 2);
+  width: 100%;
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+
+  &__track {
+    height: var(--height);
+    background-color: var(--ProgressBar__track-background);
+  }
+
+  &__progress {
+    width: calc(var(--progress-rate) * 100%);
+    height: var(--height);
+    background-color: var(--ProgressBar__progress-background);
+    transition: width var(--ProgressBar__progress-animation-time) ease;
+  }
+}
