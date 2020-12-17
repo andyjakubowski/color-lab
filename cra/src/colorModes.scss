@@ -18,6 +18,15 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.ActivityIndicator.colorModeLight {
+  --color: var(--l-secondary-label);
+  --color: var(--l-tint);
+}
+
+.ActivityIndicator.colorModeDark {
+  --color: var(--d-tint);
+}
+
 .Stepper.colorModeLight {
   --container__background: var(--l-tertiary-fill);
   --segment-background_pressed: var(--l-fill);

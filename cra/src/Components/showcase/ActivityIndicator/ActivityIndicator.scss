@@ -1,0 +1,33 @@
+.ActivityIndicator {
+  &__svg-container {
+    width: 31px;
+    height: 31px;
+  }
+
+  &__svg-line {
+    --max-opacity: 1;
+    --min-opacity: 0.3;
+    --opacity-range: calc(var(--max-opacity) - var(--min-opacity));
+    --opacity-interval: calc(var(--opacity-range) / var(--line-count));
+    --animation-duration: 1000ms;
+    --animation-delay: calc(
+      var(--animation-duration) / var(--line-count) * var(--line-index)
+    );
+    stroke: var(--color);
+    opacity: calc(
+      var(--min-opacity) + var(--line-index) * var(--opacity-interval)
+    );
+    animation: fade var(--animation-duration) linear var(--animation-delay)
+      infinite;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: var(--min-opacity, 0);
+  }
+
+  to {
+    opacity: var(--max-opacity, 1);
+  }
+}
