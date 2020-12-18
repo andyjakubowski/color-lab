@@ -1,9 +1,14 @@
-import './ButtonCTA.scss';
+import './Button.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
 import getClassNames, { getColorModeClassName } from '../../../util/util';
 
-function ButtonCTA({ componentState, colorModeName }) {
-  const CTA_TEXT = 'Send';
+function Button({
+  componentState,
+  colorModeName,
+  labelText = 'Send',
+  inlineStyles = {},
+  additionalClassName = '',
+}) {
   const supportedStates = [
     'default',
     'hovered',
@@ -12,7 +17,7 @@ function ButtonCTA({ componentState, colorModeName }) {
     'disabled',
   ];
   const isStateSupported = supportedStates.includes(componentState);
-  const block = `ButtonCTA`;
+  const block = `Button`;
   const elements = ['bezel', 'label'];
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
@@ -22,9 +27,12 @@ function ButtonCTA({ componentState, colorModeName }) {
 
   if (isStateSupported) {
     returnElement = (
-      <div className={`${block} ${colorModeClassName}`}>
+      <div
+        className={`${block} ${colorModeClassName} ${additionalClassName}`}
+        style={inlineStyles}
+      >
         <div className={classNames.bezel}>
-          <span className={classNames.label}>{CTA_TEXT}</span>
+          <span className={classNames.label}>{labelText}</span>
         </div>
       </div>
     );
@@ -37,4 +45,4 @@ function ButtonCTA({ componentState, colorModeName }) {
   return returnElement;
 }
 
-export default ButtonCTA;
+export default Button;

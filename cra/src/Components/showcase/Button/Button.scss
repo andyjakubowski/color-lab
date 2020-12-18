@@ -1,0 +1,77 @@
+.Button {
+  --default-bezel-background-color: hsl(0, 0%, 87%);
+  --default-bezel-background-color_hovered: hsl(0, 0%, 89%);
+  --default-bezel-background-color_focused: hsl(0, 0%, 93%);
+  --default-bezel-background-color_pressed: hsl(0, 0%, 84%);
+  --default-bezel-background-color_disabled: hsl(0, 0%, 95%);
+  --default-label-text-color: hsl(0, 0%, 0%);
+  --default-label-text-color_disabled: var(--l-tertiary-label);
+
+  &__bezel {
+    padding: 0 16px;
+    max-width: 382px;
+    height: 44px;
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(
+      --bezel-background-color,
+      var(--default-bezel-background-color)
+    );
+
+    cursor: pointer;
+
+    &_hovered,
+    &_focused,
+    &_pressed,
+    &_disabled {
+      pointer-events: none;
+    }
+
+    &_default:hover,
+    &_hovered {
+      background-color: var(
+        --bezel-background-color_hovered,
+        var(--default-bezel-background-color_hovered)
+      );
+    }
+
+    &_default:focus,
+    &_focused {
+      background-color: var(
+        --bezel-background-color_focused,
+        var(--default-bezel-background-color_focused)
+      );
+    }
+
+    &_default:active,
+    &_pressed {
+      background-color: var(
+        --bezel-background-color_pressed,
+        var(--default-bezel-background-color_pressed)
+      );
+    }
+
+    &_default:disabled,
+    &_disabled {
+      background-color: var(
+        --bezel-background-color_disabled,
+        var(--default-bezel-background-color_disabled)
+      );
+    }
+  }
+
+  &__label {
+    color: var(--label-text-color, var(--default-label-text-color));
+
+    &_disabled {
+      color: var(
+        --label-text-color_disabled,
+        var(--default-label-text-color_disabled)
+      );
+    }
+  }
+}

@@ -18,6 +18,18 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.Alert.colorModeLight {
+  --platter-color: var(--l-quaternary-fill);
+  --title-color: var(--l-label);
+  --message-color: var(--l-label);
+}
+
+.Alert.colorModeDark {
+  --platter-color: var(--d-quaternary-fill);
+  --title-color: var(--d-label);
+  --message-color: var(--d-label);
+}
+
 .PageControlFaker.colorModeLight {
   --page-label-color: var(--l-secondary-label);
   --page-fill-color: var(--l-secondary-fill);
@@ -117,56 +129,116 @@
 }
 
 .ButtonCTA.colorModeLight {
-  --ButtonCTA__bezel-background-color: hsl(
+  --bezel-background-color: hsl(
     var(--l-tint-h),
     var(--l-tint-s),
     var(--l-tint-l)
   );
-  --ButtonCTA__bezel-background-color_hovered: hsl(
+  --bezel-background-color_hovered: hsl(
     var(--l-tint-h),
     var(--l-tint-s),
     calc(var(--l-tint-l) + 2%)
   );
-  --ButtonCTA__bezel-background-color_focused: hsl(
+  --bezel-background-color_focused: hsl(
     var(--l-tint-h),
     var(--l-tint-s),
     calc(var(--l-tint-l) + 10%)
   );
-  --ButtonCTA__bezel-background-color_pressed: hsl(
+  --bezel-background-color_pressed: hsl(
     var(--l-tint-h),
     var(--l-tint-s),
     calc(var(--l-tint-l) - 2%)
   );
-  --ButtonCTA__bezel-background-color_disabled: var(--l-tertiary-fill);
-  --ButtonCTA__label-text-color: var(--l-tint-inverse);
-  --ButtonCTA__label-text-color_disabled: var(--l-tertiary-label);
+  --bezel-background-color_disabled: var(--l-tertiary-fill);
+  --label-text-color: var(--l-tint-inverse);
+  --label-text-color_disabled: var(--l-tertiary-label);
 }
 
 .ButtonCTA.colorModeDark {
-  --ButtonCTA__bezel-background-color: hsl(
+  --bezel-background-color: hsl(
     var(--d-tint-h),
     var(--d-tint-s),
     var(--d-tint-l)
   );
-  --ButtonCTA__bezel-background-color_hovered: hsl(
+  --bezel-background-color_hovered: hsl(
     var(--d-tint-h),
     var(--d-tint-s),
     calc(var(--d-tint-l) + 2%)
   );
-  --ButtonCTA__bezel-background-color_focused: hsl(
+  --bezel-background-color_focused: hsl(
     var(--d-tint-h),
     var(--d-tint-s),
     calc(var(--d-tint-l) + 10%)
   );
-  --ButtonCTA__bezel-background-color_pressed: hsl(
+  --bezel-background-color_pressed: hsl(
     var(--d-tint-h),
     var(--d-tint-s),
     calc(var(--d-tint-l) - 2%)
   );
-  --ButtonCTA__bezel-background-color_disabled: var(--d-tertiary-fill);
-  --ButtonCTA__label-text-color_disabled: var(--d-tertiary-label);
+  --bezel-background-color_disabled: var(--d-tertiary-fill);
+  --label-text-color_disabled: var(--d-tertiary-label);
 
-  --ButtonCTA__label-text-color: var(--d-tint-inverse);
+  --label-text-color: var(--d-tint-inverse);
+}
+
+.ButtonSecondary.colorModeLight {
+  --bezel-background-color: hsla(
+    var(--l-tertiary-fill-h),
+    var(--l-tertiary-fill-s),
+    var(--l-tertiary-fill-l),
+    var(--l-tertiary-fill-a)
+  );
+  --bezel-background-color_hovered: hsla(
+    var(--l-tertiary-fill-h),
+    var(--l-tertiary-fill-s),
+    calc(var(--l-tertiary-fill-l) + 1%),
+    calc(var(--l-tertiary-fill-a) - 1%)
+  );
+  --bezel-background-color_focused: hsla(
+    var(--l-tertiary-fill-h),
+    var(--l-tertiary-fill-s),
+    calc(var(--l-tertiary-fill-l) + 5%),
+    calc(var(--l-tertiary-fill-a) - 3%)
+  );
+  --bezel-background-color_pressed: hsla(
+    var(--l-tertiary-fill-h),
+    var(--l-tertiary-fill-s),
+    calc(var(--l-tertiary-fill-l) - 2%),
+    calc(var(--l-tertiary-fill-a) + 3%)
+  );
+  --bezel-background-color_disabled: var(--l-quaternary-fill);
+  --label-text-color: var(--l-label);
+  --label-text-color_disabled: var(--l-tertiary-label);
+}
+
+.ButtonSecondary.colorModeDark {
+  --bezel-background-color: hsla(
+    var(--d-tertiary-fill-h),
+    var(--d-tertiary-fill-s),
+    var(--d-tertiary-fill-l),
+    var(--d-tertiary-fill-a)
+  );
+  --bezel-background-color_hovered: hsla(
+    var(--d-tertiary-fill-h),
+    var(--d-tertiary-fill-s),
+    calc(var(--d-tertiary-fill-l) - 1%),
+    calc(var(--d-tertiary-fill-a) + 1%)
+  );
+  --bezel-background-color_focused: hsla(
+    var(--d-tertiary-fill-h),
+    var(--d-tertiary-fill-s),
+    calc(var(--d-tertiary-fill-l) - 5%),
+    calc(var(--d-tertiary-fill-a) + 3%)
+  );
+  --bezel-background-color_pressed: hsla(
+    var(--d-tertiary-fill-h),
+    var(--d-tertiary-fill-s),
+    calc(var(--d-tertiary-fill-l) + 2%),
+    calc(var(--d-tertiary-fill-a) - 3%)
+  );
+  --bezel-background-color_disabled: var(--d-quaternary-fill);
+  --label-text-color: var(--d-label);
+  --label-text-color_disabled: var(--d-tertiary-label);
 }
 
 .Label.colorModeLight {

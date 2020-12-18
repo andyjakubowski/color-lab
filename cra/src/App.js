@@ -3,9 +3,10 @@ import './App.scss';
 import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
+import Alert from './components/showcase/Alert/Alert';
 import PageControlFaker from './components/showcase/PageControl/PageControlFaker';
 import ActivityIndicator from './components/showcase/ActivityIndicator/ActivityIndicator';
-import ButtonCTA from './components/showcase/ButtonCTA/ButtonCTA';
+import Button from './components/showcase/Button/Button';
 import SegmentedControl from './components/showcase/SegmentedControl/SegmentedControl';
 import ProgressBarFaker from './components/showcase/ProgressBarFaker/ProgressBarFaker';
 import StepperFaker from './components/showcase/Stepper/StepperFaker';
@@ -31,14 +32,15 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
+  Alert,
   PageControlFaker,
   ActivityIndicator,
   StepperFaker,
   ProgressBarFaker,
   SegmentedControl,
   Switch,
-  ButtonCTA,
   Checkbox,
+  Button,
   Radio,
   ListItem,
   Slider,

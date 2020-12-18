@@ -1,0 +1,29 @@
+.Alert {
+  --default-platter-color: #f2f2f7;
+  --default-title-color: black;
+  --default-message-color: black;
+
+  &__title {
+    margin: 0;
+    padding: 24px 24px 8px;
+    color: var(--title-color, var(--default-title-color));
+    font-size: 17px;
+    line-height: 1.294117647;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__message {
+    margin: 0 0 24px;
+    color: var(--message-color, var(--default-message-color));
+    font-size: 13px;
+    line-height: 1.230769231;
+    text-align: center;
+  }
+
+  &__platter {
+    width: 272px;
+    border-radius: 11px;
+    background-color: var(--platter-color, var(--default-platter-color));
+  }
+}
