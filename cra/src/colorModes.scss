@@ -1,509 +1,365 @@
-.ColorMode.colorModeLight {
-  --ColorMode__background-color: var(--l-background);
-  --ColorMode__name-text-color: var(--l-tertiary-label);
-  --ColorMode__state-name-text-color: var(--l-quaternary-label);
+.colorModeLight {
+  --tint: var(--l-tint);
+  --tint-h: var(--l-tint-h);
+  --tint-s: var(--l-tint-s);
+  --tint-l: var(--l-tint-l);
+  --tint-inverse: var(--l-tint-inverse);
+  --label: var(--l-label);
+  --label-h: var(--l-label-h);
+  --label-s: var(--l-label-s);
+  --label-l: var(--l-label-l);
+  --label-a: var(--l-label-a);
+  --secondary-label: var(--l-secondary-label);
+  --tertiary-label: var(--l-tertiary-label);
+  --quaternary-label: var(--l-quaternary-label);
+  --fill: var(--l-fill);
+  --fill-h: var(--l-fill-h);
+  --fill-s: var(--l-fill-s);
+  --fill-l: var(--l-fill-l);
+  --fill-a: var(--l-fill-a);
+  --secondary-fill: var(--l-secondary-fill);
+  --secondary-fill-h: var(--l-secondary-fill-h);
+  --secondary-fill-s: var(--l-secondary-fill-s);
+  --secondary-fill-l: var(--l-secondary-fill-l);
+  --secondary-fill-a: var(--l-secondary-fill-a);
+  --tertiary-fill: var(--l-tertiary-fill);
+  --tertiary-fill-h: var(--l-tertiary-fill-h);
+  --tertiary-fill-s: var(--l-tertiary-fill-s);
+  --tertiary-fill-l: var(--l-tertiary-fill-l);
+  --tertiary-fill-a: var(--l-tertiary-fill-a);
+  --quaternary-fill: var(--l-quaternary-fill);
+  --placeholder-text: var(--l-placeholder-text);
+  --background: var(--l-background);
+  --secondary-background: var(--l-secondary-background);
+  --tertiary-background: var(--l-tertiary-background);
+  --grouped-background: var(--l-grouped-background);
+  --secondary-grouped-background: var(--l-secondary-grouped-background);
+  --tertiary-grouped-background: var(--l-tertiary-grouped-background);
+  --separator: var(--l-separator);
+  --opaque-separator: var(--l-opaque-separator);
+  --link: var(--l-link);
+  --system-grey: var(--l-system-grey);
+  --system-grey2: var(--l-system-grey2);
+  --system-grey3: var(--l-system-grey3);
+  --system-grey4: var(--l-system-grey4);
+  --system-grey5: var(--l-system-grey5);
+  --system-grey6: var(--l-system-grey6);
+  --arbitrary-activity-indicator: var(--l-arbitrary-activity-indicator);
+  --animation-time-very-short: var(--l-animation-time-very-short);
+  --animation-time-short: var(--l-animation-time-short);
+  --animation-time-medium: var(--l-animation-time-medium);
 }
 
-.ColorMode.colorModeDark {
-  --ColorMode__background-color: var(--d-background);
-  --ColorMode__name-text-color: var(--d-tertiary-label);
-  --ColorMode__state-name-text-color: var(--d-quaternary-label);
+.colorModeDark {
+  --tint: var(--d-tint);
+  --tint-h: var(--d-tint-h);
+  --tint-s: var(--d-tint-s);
+  --tint-l: var(--d-tint-l);
+  --tint-inverse: var(--d-tint-inverse);
+  --label: var(--d-label);
+  --label-h: var(--d-label-h);
+  --label-s: var(--d-label-s);
+  --label-l: var(--d-label-l);
+  --label-a: var(--d-label-a);
+  --secondary-label: var(--d-secondary-label);
+  --tertiary-label: var(--d-tertiary-label);
+  --quaternary-label: var(--d-quaternary-label);
+  --fill: var(--d-fill);
+  --fill-h: var(--d-fill-h);
+  --fill-s: var(--d-fill-s);
+  --fill-l: var(--d-fill-l);
+  --fill-a: var(--d-fill-a);
+  --secondary-fill: var(--d-secondary-fill);
+  --secondary-fill-h: var(--d-secondary-fill-h);
+  --secondary-fill-s: var(--d-secondary-fill-s);
+  --secondary-fill-l: var(--d-secondary-fill-l);
+  --secondary-fill-a: var(--d-secondary-fill-a);
+  --tertiary-fill: var(--d-tertiary-fill);
+  --tertiary-fill-h: var(--d-tertiary-fill-h);
+  --tertiary-fill-s: var(--d-tertiary-fill-s);
+  --tertiary-fill-l: var(--d-tertiary-fill-l);
+  --tertiary-fill-a: var(--d-tertiary-fill-a);
+  --quaternary-fill: var(--d-quaternary-fill);
+  --placeholder-text: var(--d-placeholder-text);
+  --background: var(--d-background);
+  --secondary-background: var(--d-secondary-background);
+  --tertiary-background: var(--d-tertiary-background);
+  --grouped-background: var(--d-grouped-background);
+  --secondary-grouped-background: var(--d-secondary-grouped-background);
+  --tertiary-grouped-background: var(--d-tertiary-grouped-background);
+  --separator: var(--d-separator);
+  --opaque-separator: var(--d-opaque-separator);
+  --link: var(--d-link);
+  --system-grey: var(--d-system-grey);
+  --system-grey2: var(--d-system-grey2);
+  --system-grey3: var(--d-system-grey3);
+  --system-grey4: var(--d-system-grey4);
+  --system-grey5: var(--d-system-grey5);
+  --system-grey6: var(--d-system-grey6);
+  --arbitrary-activity-indicator: var(--d-arbitrary-activity-indicator);
+  --animation-time-very-short: var(--d-animation-time-very-short);
+  --animation-time-short: var(--d-animation-time-short);
+  --animation-time-medium: var(--d-animation-time-medium);
 }
 
-.UnsupportedStatePlaceholder.colorModeLight {
-  --UnsupportedStatePlaceholder__text-color: var(--l-quaternary-label);
+.ColorMode {
+  --ColorMode__background-color: var(--background);
+  --ColorMode__name-text-color: var(--tertiary-label);
+  --ColorMode__state-name-text-color: var(--quaternary-label);
+}
+
+.UnsupportedStatePlaceholder {
+  --UnsupportedStatePlaceholder__text-color: var(--quaternary-label);
 }
 
 .UnsupportedStatePlaceholder.colorModeDark {
-  --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
+  --UnsupportedStatePlaceholder__text-color: var(--quaternary-label);
 }
 
-.Alert.colorModeLight {
-  --platter-color: var(--l-quaternary-fill);
-  --title-color: var(--l-label);
-  --message-color: var(--l-label);
+.Alert {
+  --platter-color: var(--quaternary-fill);
+  --title-color: var(--label);
+  --message-color: var(--label);
 }
 
-.Alert.colorModeDark {
-  --platter-color: var(--d-quaternary-fill);
-  --title-color: var(--d-label);
-  --message-color: var(--d-label);
+.PageControlFaker {
+  --page-label-color: var(--secondary-label);
+  --page-fill-color: var(--secondary-fill);
 }
 
-.PageControlFaker.colorModeLight {
-  --page-label-color: var(--l-secondary-label);
-  --page-fill-color: var(--l-secondary-fill);
-}
-
-.PageControlFaker.colorModeDark {
-  --page-label-color: var(--d-secondary-label);
-  --page-fill-color: var(--d-secondary-fill);
-}
-
-.PageControl.colorModeLight {
-  --page-indicator-tint-color: var(--l-fill);
-  --current-page-indicator-tint-color: var(--l-label);
-  --page-indicator-tint-color-transition-time: var(
-    --l-animation-time-very-short
-  );
+.PageControl {
+  --page-indicator-tint-color: var(--fill);
+  --current-page-indicator-tint-color: var(--label);
+  --page-indicator-tint-color-transition-time: var(--animation-time-very-short);
 }
 
 .PageControl.colorModeDark {
-  --page-indicator-tint-color: var(--d-fill);
-  --current-page-indicator-tint-color: var(--d-label);
-  --page-indicator-tint-color-transition-time: var(
-    --d-animation-time-very-short
-  );
+  --page-indicator-tint-color: var(--fill);
+  --current-page-indicator-tint-color: var(--label);
+  --page-indicator-tint-color-transition-time: var(--animation-time-very-short);
 }
 
-.ActivityIndicator.colorModeLight {
-  --color: var(--l-secondary-label);
+.ActivityIndicator {
+  --color: var(--secondary-label);
 }
 
-.ActivityIndicator.colorModeDark {
-  --color: var(--d-secondary-label);
+.Stepper {
+  --container__background: var(--tertiary-fill);
+  --segment-background_pressed: var(--fill);
+  --segment-symbol__color_default: var(--label);
+  --segment-symbol__color_disabled: var(--quaternary-label);
+  --divider__background: var(--fill);
 }
 
-.Stepper.colorModeLight {
-  --container__background: var(--l-tertiary-fill);
-  --segment-background_pressed: var(--l-fill);
-  --segment-symbol__color_default: var(--l-label);
-  --segment-symbol__color_disabled: var(--l-quaternary-label);
-  --divider__background: var(--l-fill);
+.StepperFaker {
+  --label__text-color: var(--secondary-label);
 }
 
-.Stepper.colorModeDark {
-  --container__background: var(--d-tertiary-fill);
-  --segment-background_pressed: var(--d-fill);
-  --segment-symbol__color_default: var(--d-label);
-  --segment-symbol__color_disabled: var(--d-quaternary-label);
-  --divider__background: var(--d-fill);
+.ProgressBar {
+  --ProgressBar__track-background: var(--fill);
+  --ProgressBar__progress-background: var(--tint);
+  --ProgressBar__progress-animation-time: var(--animation-time-short);
 }
 
-.StepperFaker.colorModeLight {
-  --label__text-color: var(--l-secondary-label);
-}
-
-.StepperFaker.colorModeDark {
-  --label__text-color: var(--d-secondary-label);
-}
-
-.ProgressBar.colorModeLight {
-  --ProgressBar__track-background: var(--l-fill);
-  --ProgressBar__progress-background: var(--l-tint);
-  --ProgressBar__progress-animation-time: var(--l-animation-time-short);
-}
-
-.ProgressBar.colorModeDark {
-  --ProgressBar__track-background: var(--d-fill);
-  --ProgressBar__progress-background: var(--d-tint);
-  --ProgressBar__progress-animation-time: var(--d-animation-time-short);
-}
-
-.SegmentedControl.colorModeLight {
-  --SegmentedControl__background-color: var(--l-secondary-fill);
+.SegmentedControl {
+  --SegmentedControl__background-color: var(--secondary-fill);
   --SegmentedControl__selection-indicator-background: white;
   --SegmentedControl__selection-indicator-animation-time: var(
-    --l-animation-time-medium
+    --animation-time-medium
   );
-  --SegmentedControl__divider-background: var(--l-fill);
-  --SegmentedControl__divider-animation-time: var(--l-animation-time-short);
-  --SegmentedControl__segment-title-color: var(--l-label);
-  --SegmentedControl__segment-title-animation-time: var(
-    --l-animation-time-short
-  );
+  --SegmentedControl__divider-background: var(--fill);
+  --SegmentedControl__divider-animation-time: var(--animation-time-short);
+  --SegmentedControl__segment-title-color: var(--label);
+  --SegmentedControl__segment-title-animation-time: var(--animation-time-short);
 }
 
 .SegmentedControl.colorModeDark {
-  --SegmentedControl__background-color: var(--d-tertiary-fill);
-  --SegmentedControl__selection-indicator-background: var(--d-system-grey2);
-  --SegmentedControl__selection-indicator-animation-time: var(
-    --d-animation-time-medium
-  );
-  --SegmentedControl__divider-background: var(--d-fill);
-  --SegmentedControl__divider-animation-time: var(--d-animation-time-short);
-  --SegmentedControl__segment-title-color: var(--d-label);
-  --SegmentedControl__segment-title-animation-time: var(
-    --l-animation-time-short
-  );
+  --SegmentedControl__background-color: var(--tertiary-fill);
+  --SegmentedControl__selection-indicator-background: var(--system-grey2);
 }
 
-.ButtonCTA.colorModeLight {
-  --bezel-background-color: hsl(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    var(--l-tint-l)
-  );
+.ButtonCTA {
+  --bezel-background-color: hsl(var(--tint-h), var(--tint-s), var(--tint-l));
   --bezel-background-color_hovered: hsl(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) + 2%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) + 2%)
   );
   --bezel-background-color_focused: hsl(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) + 10%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) + 10%)
   );
   --bezel-background-color_pressed: hsl(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) - 2%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) - 2%)
   );
-  --bezel-background-color_disabled: var(--l-tertiary-fill);
-  --label-text-color: var(--l-tint-inverse);
-  --label-text-color_disabled: var(--l-tertiary-label);
+  --bezel-background-color_disabled: var(--tertiary-fill);
+  --label-text-color: var(--tint-inverse);
+  --label-text-color_disabled: var(--tertiary-label);
 }
 
-.ButtonCTA.colorModeDark {
-  --bezel-background-color: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    var(--d-tint-l)
-  );
-  --bezel-background-color_hovered: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) + 2%)
-  );
-  --bezel-background-color_focused: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) + 10%)
-  );
-  --bezel-background-color_pressed: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) - 2%)
-  );
-  --bezel-background-color_disabled: var(--d-tertiary-fill);
-  --label-text-color_disabled: var(--d-tertiary-label);
-
-  --label-text-color: var(--d-tint-inverse);
-}
-
-.ButtonSecondary.colorModeLight {
+.ButtonSecondary {
   --bezel-background-color: hsla(
-    var(--l-tertiary-fill-h),
-    var(--l-tertiary-fill-s),
-    var(--l-tertiary-fill-l),
-    var(--l-tertiary-fill-a)
+    var(--tertiary-fill-h),
+    var(--tertiary-fill-s),
+    var(--tertiary-fill-l),
+    var(--tertiary-fill-a)
   );
   --bezel-background-color_hovered: hsla(
-    var(--l-tertiary-fill-h),
-    var(--l-tertiary-fill-s),
-    calc(var(--l-tertiary-fill-l) + 1%),
-    calc(var(--l-tertiary-fill-a) - 1%)
+    var(--tertiary-fill-h),
+    var(--tertiary-fill-s),
+    calc(var(--tertiary-fill-l) + 1%),
+    calc(var(--tertiary-fill-a) - 1%)
   );
   --bezel-background-color_focused: hsla(
-    var(--l-tertiary-fill-h),
-    var(--l-tertiary-fill-s),
-    calc(var(--l-tertiary-fill-l) + 5%),
-    calc(var(--l-tertiary-fill-a) - 3%)
+    var(--tertiary-fill-h),
+    var(--tertiary-fill-s),
+    calc(var(--tertiary-fill-l) + 5%),
+    calc(var(--tertiary-fill-a) - 3%)
   );
   --bezel-background-color_pressed: hsla(
-    var(--l-tertiary-fill-h),
-    var(--l-tertiary-fill-s),
-    calc(var(--l-tertiary-fill-l) - 2%),
-    calc(var(--l-tertiary-fill-a) + 3%)
+    var(--tertiary-fill-h),
+    var(--tertiary-fill-s),
+    calc(var(--tertiary-fill-l) - 2%),
+    calc(var(--tertiary-fill-a) + 3%)
   );
-  --bezel-background-color_disabled: var(--l-quaternary-fill);
-  --label-text-color: var(--l-label);
-  --label-text-color_disabled: var(--l-tertiary-label);
+  --bezel-background-color_disabled: var(--quaternary-fill);
+  --label-text-color: var(--label);
+  --label-text-color_disabled: var(--tertiary-label);
 }
 
-.ButtonSecondary.colorModeDark {
-  --bezel-background-color: hsla(
-    var(--d-tertiary-fill-h),
-    var(--d-tertiary-fill-s),
-    var(--d-tertiary-fill-l),
-    var(--d-tertiary-fill-a)
-  );
-  --bezel-background-color_hovered: hsla(
-    var(--d-tertiary-fill-h),
-    var(--d-tertiary-fill-s),
-    calc(var(--d-tertiary-fill-l) - 1%),
-    calc(var(--d-tertiary-fill-a) + 1%)
-  );
-  --bezel-background-color_focused: hsla(
-    var(--d-tertiary-fill-h),
-    var(--d-tertiary-fill-s),
-    calc(var(--d-tertiary-fill-l) - 5%),
-    calc(var(--d-tertiary-fill-a) + 3%)
-  );
-  --bezel-background-color_pressed: hsla(
-    var(--d-tertiary-fill-h),
-    var(--d-tertiary-fill-s),
-    calc(var(--d-tertiary-fill-l) + 2%),
-    calc(var(--d-tertiary-fill-a) - 3%)
-  );
-  --bezel-background-color_disabled: var(--d-quaternary-fill);
-  --label-text-color: var(--d-label);
-  --label-text-color_disabled: var(--d-tertiary-label);
+.Label {
+  --Label__label-text_idle: var(--label);
 }
 
-.Label.colorModeLight {
-  --Label__label-text_idle: var(--l-label);
+.Slider {
+  --Slider__track-progress_idle: var(--tint);
+  --Slider__track-background_idle: var(--fill);
+  --Slider__track-progress_disabled: var(--tertiary-fill);
+  --Slider__track-background_disabled: var(--quaternary-fill);
 }
 
-.Label.colorModeDark {
-  --Label__label-text_idle: var(--d-label);
-}
-
-.Slider.colorModeLight {
-  --Slider__track-progress_idle: var(--l-tint);
-  --Slider__track-background_idle: var(--l-fill);
-  --Slider__track-progress_disabled: var(--l-tertiary-fill);
-  --Slider__track-background_disabled: var(--l-quaternary-fill);
-}
-
-.Slider.colorModeDark {
-  --Slider__track-progress_idle: var(--d-tint);
-  --Slider__track-background_idle: var(--d-fill);
-  --Slider__track-progress_disabled: var(--d-tertiary-fill);
-  --Slider__track-background_disabled: var(--d-quaternary-fill);
-}
-
-.Switch.colorModeLight {
-  --Switch__background_idle: var(--l-secondary-fill);
+.Switch {
+  --Switch__background_idle: var(--secondary-fill);
   --Switch__background_pressed: hsla(
-    var(--l-secondary-fill-h),
-    var(--l-secondary-fill-s),
-    calc(var(--l-secondary-fill-l) - 12%),
-    var(--l-secondary-fill-a)
+    var(--secondary-fill-h),
+    var(--secondary-fill-s),
+    calc(var(--secondary-fill-l) - 12%),
+    var(--secondary-fill-a)
   );
-  --Switch__background_checked: var(--l-tint);
+  --Switch__background_checked: var(--tint);
   --Switch__background_checked-pressed: hsla(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) - 4%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) - 4%)
   );
-  --Switch__background_disabled: var(--l-quaternary-fill);
+  --Switch__background_disabled: var(--quaternary-fill);
 }
 
-.Switch.colorModeDark {
-  --Switch__background_idle: var(--d-secondary-fill);
-  --Switch__background_pressed: hsla(
-    var(--d-secondary-fill-h),
-    var(--d-secondary-fill-s),
-    calc(var(--d-secondary-fill-l) - 12%),
-    var(--d-secondary-fill-a)
-  );
-  --Switch__background_checked: var(--d-tint);
-  --Switch__background_checked-pressed: hsla(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) - 4%)
-  );
-  --Switch__background_disabled: var(--d-quaternary-fill);
-}
-
-.Checkbox.colorModeLight {
-  --Checkbox__background_idle: var(--l-fill);
+.Checkbox {
+  --Checkbox__background_idle: var(--fill);
   --Checkbox__background_hovered: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) + 10%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) + 10%),
+    var(--fill-a)
   );
   --Checkbox__background_focused: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) + 10%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) + 10%),
+    var(--fill-a)
   );
   --Checkbox__background_pressed: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) - 12%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) - 12%),
+    var(--fill-a)
   );
-  --Checkbox__background_checked: var(--l-tint);
+  --Checkbox__background_checked: var(--tint);
   --Checkbox__background_checked-hovered: hsla(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) + 6%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) + 6%)
   );
   --Checkbox__background_checked-pressed: hsla(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) - 4%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) - 4%)
   );
-  --Checkbox__background_disabled: var(--l-quaternary-fill);
+  --Checkbox__background_disabled: var(--quaternary-fill);
 }
 
-.Checkbox.colorModeDark {
-  --Checkbox__background_idle: var(--d-fill);
-  --Checkbox__background_hovered: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) + 10%),
-    var(--d-fill-a)
-  );
-  --Checkbox__background_focused: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) + 10%),
-    var(--d-fill-a)
-  );
-  --Checkbox__background_pressed: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) - 12%),
-    var(--d-fill-a)
-  );
-  --Checkbox__background_checked: var(--d-tint);
-  --Checkbox__background_checked-hovered: hsla(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) + 6%)
-  );
-  --Checkbox__background_checked-pressed: hsla(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) - 4%)
-  );
-  --Checkbox__background_disabled: var(--d-quaternary-fill);
-}
-
-.Radio.colorModeLight {
-  --Radio__background_idle: var(--l-fill);
+.Radio {
+  --Radio__background_idle: var(--fill);
   --Radio__background_hovered: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) + 10%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) + 10%),
+    var(--fill-a)
   );
   --Radio__background_focused: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) + 10%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) + 10%),
+    var(--fill-a)
   );
   --Radio__background_pressed: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) - 12%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) - 12%),
+    var(--fill-a)
   );
-  --Radio__background_checked: var(--l-tint);
+  --Radio__background_checked: var(--tint);
   --Radio__background_checked-hovered: hsla(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) + 6%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) + 6%)
   );
   --Radio__background_checked-pressed: hsla(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) - 4%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) - 4%)
   );
-  --Radio__background_disabled: var(--l-quaternary-fill);
+  --Radio__background_disabled: var(--quaternary-fill);
 }
 
-.Radio.colorModeDark {
-  --Radio__background_idle: var(--d-fill);
-  --Radio__background_hovered: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) + 10%),
-    var(--d-fill-a)
-  );
-  --Radio__background_focused: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) + 10%),
-    var(--d-fill-a)
-  );
-  --Radio__background_pressed: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) - 12%),
-    var(--d-fill-a)
-  );
-  --Radio__background_checked: var(--d-tint);
-  --Radio__background_checked-hovered: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) + 6%)
-  );
-  --Radio__background_checked-pressed: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) - 4%)
-  );
-  --Radio__background_disabled: var(--d-quaternary-fill);
-}
-
-.ListItem.colorModeLight {
+.ListItem {
   --ListItem__opacity_disabled: 0.5;
-  --ListItem__separator-background_idle: var(--l-separator);
+  --ListItem__separator-background_idle: var(--separator);
   --ListItem__separator-background_hovered: transparent;
   --ListItem__separator-background_pressed: transparent;
   --ListItem__separator-background_selected: transparent;
-  --ListItem__title-text_idle: var(--l-label);
+  --ListItem__title-text_idle: var(--label);
   --ListItem__title-text_disabled: hsla(
-    var(--l-label-h),
-    var(--l-label-s),
-    var(--l-label-l),
-    calc(var(--l-label-a) * 0.5)
+    var(--label-h),
+    var(--label-s),
+    var(--label-l),
+    calc(var(--label-a) * 0.5)
   );
-  --ListItem__title-text_selected: var(--l-tint-inverse);
-  --ListItem__subtitle-text_idle: var(--l-secondary-label);
-  --ListItem__subtitle-text_disabled: var(--l-secondary-label);
-  --ListItem__subtitle-text_selected: var(--l-tint-inverse);
-  --ListItem__background_idle: var(--l-background);
-  --ListItem__background_hovered: var(--l-fill);
+  --ListItem__title-text_selected: var(--tint-inverse);
+  --ListItem__subtitle-text_idle: var(--secondary-label);
+  --ListItem__subtitle-text_disabled: var(--secondary-label);
+  --ListItem__subtitle-text_selected: var(--tint-inverse);
+  --ListItem__background_idle: var(--background);
+  --ListItem__background_hovered: var(--fill);
   --ListItem__background_pressed: hsla(
-    var(--l-fill-h),
-    var(--l-fill-s),
-    calc(var(--l-fill-l) - 16%),
-    var(--l-fill-a)
+    var(--fill-h),
+    var(--fill-s),
+    calc(var(--fill-l) - 16%),
+    var(--fill-a)
   );
-  --ListItem__background_selected: var(--l-tint);
+  --ListItem__background_selected: var(--tint);
   --ListItem__background_selected-hovered: hsl(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) + 2%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) + 2%)
   );
   --ListItem__background_selected-pressed: hsl(
-    var(--l-tint-h),
-    var(--l-tint-s),
-    calc(var(--l-tint-l) - 2%)
-  );
-}
-
-.ListItem.colorModeDark {
-  --ListItem__opacity_disabled: 0.5;
-  --ListItem__separator-background_idle: var(--d-separator);
-  --ListItem__separator-background_hovered: transparent;
-  --ListItem__separator-background_pressed: transparent;
-  --ListItem__separator-background_selected: transparent;
-  --ListItem__title-text_idle: var(--d-label);
-  --ListItem__title-text_disabled: hsla(
-    var(--d-label-h),
-    var(--d-label-s),
-    var(--d-label-l),
-    calc(var(--d-label-a) / 2)
-  );
-  --ListItem__title-text_selected: var(--d-tint-inverse);
-  --ListItem__subtitle-text_idle: var(--d-secondary-label);
-  --ListItem__subtitle-text_selected: var(--d-tint-inverse);
-  --ListItem__background_idle: var(--d-background);
-  --ListItem__background_hovered: var(--d-fill);
-  --ListItem__background_pressed: hsla(
-    var(--d-fill-h),
-    var(--d-fill-s),
-    calc(var(--d-fill-l) - 16%),
-    var(--d-fill-a)
-  );
-  --ListItem__background_selected: var(--d-tint);
-  --ListItem__background_selected-hovered: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) + 2%)
-  );
-  --ListItem__background_selected-pressed: hsl(
-    var(--d-tint-h),
-    var(--d-tint-s),
-    calc(var(--d-tint-l) - 2%)
+    var(--tint-h),
+    var(--tint-s),
+    calc(var(--tint-l) - 2%)
   );
 }
