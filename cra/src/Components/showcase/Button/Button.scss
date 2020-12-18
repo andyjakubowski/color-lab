@@ -66,6 +66,8 @@
 
   &__label {
     color: var(--label-text-color, var(--default-label-text-color));
+    font-weight: 600;
+    font-size: 17px;
 
     &_disabled {
       color: var(
