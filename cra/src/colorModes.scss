@@ -20,11 +20,10 @@
 
 .ActivityIndicator.colorModeLight {
   --color: var(--l-secondary-label);
-  --color: var(--l-tint);
 }
 
 .ActivityIndicator.colorModeDark {
-  --color: var(--d-tint);
+  --color: var(--d-secondary-label);
 }
 
 .Stepper.colorModeLight {
