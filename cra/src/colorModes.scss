@@ -18,6 +18,16 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.PageControl.colorModeLight {
+  --page-indicator-tint-color: var(--l-fill);
+  --current-page-indicator-tint-color: var(--l-label);
+}
+
+.PageControl.colorModeDark {
+  --page-indicator-tint-color: var(--d-fill);
+  --current-page-indicator-tint-color: var(--d-label);
+}
+
 .ActivityIndicator.colorModeLight {
   --color: var(--l-secondary-label);
 }

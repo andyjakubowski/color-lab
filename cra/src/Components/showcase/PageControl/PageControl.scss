@@ -1,0 +1,48 @@
+.PageControl {
+  --page-control-height: 44px;
+  --page-control-padding-inline: 40px;
+  --page-indicator-background-color: var(--page-indicator-tint-color);
+  --page-indicator-size: 8px;
+  --page-indicator-corner-radius: calc(var(--page-indicator-size) / 2);
+  --space-between-page-indicators: 10px;
+  --page-indicator-padding-inline: calc(
+    var(--space-between-page-indicators) / 2
+  );
+  --page-indicator-padding-block: calc(
+    (var(--page-control-height) - var(--page-indicator-size)) / 2
+  );
+
+  display: flex;
+
+  &__sideSpacerLeft,
+  &__sideSpacerRight {
+    width: var(--page-control-padding-inline);
+    height: var(--page-control-height);
+  }
+
+  &__pageIndicatorsContainer {
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+  &__pageIndicatorContainer {
+    padding-block-start: var(--page-indicator-padding-block);
+    padding-block-end: var(--page-indicator-padding-block);
+    padding-inline-start: var(--page-indicator-padding-inline);
+    padding-inline-end: var(--page-indicator-padding-inline);
+  }
+
+  &__pageIndicator {
+    width: var(--page-indicator-size);
+    height: var(--page-indicator-size);
+    border-radius: var(--page-indicator-corner-radius);
+
+    background-color: var(--page-indicator-background-color);
+
+    &_current {
+      --page-indicator-background-color: var(
+        --current-page-indicator-tint-color
+      );
+    }
+  }
+}
