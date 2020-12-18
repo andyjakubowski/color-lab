@@ -1,6 +1,6 @@
 import './ActivityIndicator.scss';
 import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import getClassNames, { getColorModeClassName } from '../../../util/util';
+import { getColorModeClassName } from '../../../util/util';
 
 const ActivityIndicator = function ActivityIndicator({
   componentState,
