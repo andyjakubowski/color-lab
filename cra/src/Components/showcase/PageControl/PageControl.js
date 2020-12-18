@@ -6,7 +6,7 @@ const PageControl = function PageControl({
   componentState,
   colorModeName,
   numberOfPages = 4,
-  currentPage = 3,
+  currentPageIndex = 3,
   onPreviousPage = () => console.log('onPreviousPage'),
   onNextPage = () => console.log('onNextPage'),
 }) {
@@ -23,8 +23,8 @@ const PageControl = function PageControl({
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
   const colorModeClassName = getColorModeClassName(colorModeName);
-  const isFirstPageCurrent = currentPage === 0;
-  const isLastPageCurrent = currentPage === numberOfPages;
+  const isFirstPageCurrent = currentPageIndex === 0;
+  const isLastPageCurrent = currentPageIndex + 1 === numberOfPages;
 
   const updateCurrentPageIfNeeded = function updateCurrentPageIfNeeded({
     elType,
@@ -40,12 +40,12 @@ const PageControl = function PageControl({
       return;
     }
 
-    if (elType === 'pageIndicator' && clickedPageIndex < currentPage) {
+    if (elType === 'pageIndicator' && clickedPageIndex < currentPageIndex) {
       onPreviousPage();
       return;
     }
 
-    if (elType === 'pageIndicator' && clickedPageIndex > currentPage) {
+    if (elType === 'pageIndicator' && clickedPageIndex > currentPageIndex) {
       onNextPage();
       return;
     }
@@ -78,7 +78,7 @@ const PageControl = function PageControl({
       indicatorIndex
     );
     let pageIndicatorClassName = classNames.pageIndicator;
-    if (indicatorIndex === currentPage) {
+    if (indicatorIndex === currentPageIndex) {
       pageIndicatorClassName = `${pageIndicatorClassName} PageControl__pageIndicator_current`;
     }
     return (

@@ -1,0 +1,16 @@
+.PageControlFaker {
+  width: 70%;
+
+  &__page-label {
+    height: 72px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--page-label-color);
+    background-color: var(--page-fill-color);
+
+    text-align: center;
+  }
+}

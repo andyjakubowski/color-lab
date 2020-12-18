@@ -18,6 +18,16 @@
   --UnsupportedStatePlaceholder__text-color: var(--d-quaternary-label);
 }
 
+.PageControlFaker.colorModeLight {
+  --page-label-color: var(--l-secondary-label);
+  --page-fill-color: var(--l-secondary-fill);
+}
+
+.PageControlFaker.colorModeDark {
+  --page-label-color: var(--d-secondary-label);
+  --page-fill-color: var(--d-secondary-fill);
+}
+
 .PageControl.colorModeLight {
   --page-indicator-tint-color: var(--l-fill);
   --current-page-indicator-tint-color: var(--l-label);
