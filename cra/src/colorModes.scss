@@ -31,11 +31,17 @@
 .PageControl.colorModeLight {
   --page-indicator-tint-color: var(--l-fill);
   --current-page-indicator-tint-color: var(--l-label);
+  --page-indicator-tint-color-transition-time: var(
+    --l-animation-time-very-short
+  );
 }
 
 .PageControl.colorModeDark {
   --page-indicator-tint-color: var(--d-fill);
   --current-page-indicator-tint-color: var(--d-label);
+  --page-indicator-tint-color-transition-time: var(
+    --d-animation-time-very-short
+  );
 }
 
 .ActivityIndicator.colorModeLight {

@@ -39,6 +39,8 @@
     border-radius: var(--page-indicator-corner-radius);
 
     background-color: var(--page-indicator-background-color);
+    transition: background-color
+      var(--page-indicator-tint-color-transition-time);
 
     &_current {
       --page-indicator-background-color: var(
