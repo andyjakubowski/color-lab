@@ -3,7 +3,6 @@
   background-color: var(--ColorMode__background-color, lightgray);
 
   &__title {
-    // padding: 0 24px;
     flex-basis: 140px;
     flex-shrink: 0;
     display: flex;
@@ -16,15 +15,16 @@
   &__states {
     --element-state-size: 288;
     --element-state-width: calc(var(--element-state-size) * 1px);
-    --element-state-height: calc(var(--element-state-size) * 1px);
+    --element-state-height: calc(var(--element-state-size) * 0.75px);
 
     display: grid;
     grid-template-columns: repeat(5, var(--element-state-width));
-    grid-template-rows: var(--element-state-height);
+    grid-template-rows: minmax(var(--element-state-height), auto);
     background-color: var(--ColorMode__background-color, lightgray);
   }
 
   &__state-container {
+    padding: 24px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
