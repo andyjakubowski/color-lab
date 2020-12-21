@@ -7,25 +7,20 @@ function ColorMode({ Component, componentStates, colorModeName }) {
   const block = `ColorMode`;
   const states = componentStates.map((stateName, index) => {
     const isStateSupported = Component.supportedStates.includes(stateName);
+    let componentMarkup;
+
     if (isStateSupported) {
-      return (
-        <div className="ColorMode__state-container" key={index.toString()}>
-          <div className="ColorMode__component-container">
-            <Component
-              colorModeName={colorModeName}
-              componentState={stateName}
-            />
-          </div>
-          <div className="ColorMode__state-label">{stateName}</div>
-        </div>
-      );
+      componentMarkup = <Component componentState={stateName} />;
     } else {
-      return (
-        <div key={index.toString()}>
-          <UnsupportedStatePlaceholder />
-        </div>
-      );
+      componentMarkup = <UnsupportedStatePlaceholder />;
     }
+
+    return (
+      <div className="ColorMode__state-container" key={index.toString()}>
+        <div className="ColorMode__component-container">{componentMarkup}</div>
+        <div className="ColorMode__state-label">{stateName}</div>
+      </div>
+    );
   });
 
   return (
