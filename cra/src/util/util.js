@@ -7,6 +7,16 @@ const getClassNames = function getClassNames(block, elements, modifier) {
   }, {});
 };
 
+const makeBemClassNamer = function makeBemClassNamer(blockName) {
+  return function bemClassNamer(element, modifier = null) {
+    if (!!modifier) {
+      return `${blockName}__${element}_${modifier}`;
+    } else {
+      return `${blockName}__${element}`;
+    }
+  };
+};
+
 const getColorModeClassName = function getColorModeClassName(modeName) {
   let className;
 
@@ -24,4 +34,4 @@ const getColorModeClassName = function getColorModeClassName(modeName) {
   return className;
 };
 
-export { getClassNames as default, getColorModeClassName };
+export { getClassNames as default, getColorModeClassName, makeBemClassNamer };

@@ -118,6 +118,10 @@
 
 .TextField {
   --text-color: var(--label);
+  --placeholder-color: var(--secondary-label);
+  --background-color: var(--tertiary-fill);
+  --leading-view-symbol-color: var(--secondary-label);
+  --clear-button-symbol-color: var(--secondary-label);
 }
 
 .Alert {

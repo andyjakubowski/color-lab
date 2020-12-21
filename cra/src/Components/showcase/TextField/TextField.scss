@@ -1,0 +1,94 @@
+.TextField {
+  --default-text-color: gray;
+  --default-text-font-size: 17px;
+  --default-placeholder-color: lightgray;
+  --default-background-color: hsla(0, 0%, 50%, 30%);
+  --default-background-corner-radius: 10px;
+  --default-background-width: 272px;
+  --default-background-height: 40px;
+  --default-trailing-leading-view-size: 40px;
+  --default-leading-view-symbol-color: hsla(0, 0%, 50%, 30%);
+  --default-clear-button-symbol-color: hsla(0, 0%, 50%, 30%);
+
+  --internal-text-color: var(--text-color, var(--default-text-color));
+  --internal-placeholder-color: var(
+    --placeholder-color,
+    var(--default-placeholder-color)
+  );
+  --internal-placeholder-color: var(
+    --placeholder-color,
+    var(--default-placeholder-color)
+  );
+  --internal-background-color: var(
+    --background-color,
+    var(--default-background-color)
+  );
+  --internal-leading-view-symbol-color: var(
+    --leading-view-symbol-color,
+    var(--default-leading-view-symbol-color)
+  );
+  --internal-clear-button-symbol-color: var(
+    --clear-button-symbol-color,
+    var(--default-clear-button-symbol-color)
+  );
+
+  width: 100%;
+  height: var(--default-background-height);
+  border-radius: var(--default-background-corner-radius);
+  background-color: var(--internal-background-color);
+
+  &__label {
+    height: 100%;
+
+    display: flex;
+  }
+
+  &__leadingView,
+  &__trailingView {
+    flex: 0 0 var(--default-trailing-leading-view-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__leadingViewSvg {
+    fill: var(--internal-leading-view-symbol-color);
+  }
+
+  &__clearButton {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: inherit;
+  }
+
+  &__clearButtonSvg {
+    fill: var(--internal-clear-button-symbol-color);
+  }
+
+  &__input {
+    min-width: 100px;
+    padding: 0;
+    border: none;
+    color: var(--internal-text-color);
+    background-color: transparent;
+
+    font-size: var(--default-text-font-size);
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--internal-placeholder-color);
+    }
+  }
+}

@@ -3,6 +3,7 @@ import './App.scss';
 import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
+import TextField from './components/showcase/TextField/TextField';
 import Alert from './components/showcase/Alert/Alert';
 import PageControlFaker from './components/showcase/PageControl/PageControlFaker';
 import ActivityIndicator from './components/showcase/ActivityIndicator/ActivityIndicator';
@@ -32,6 +33,7 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
+  TextField,
   Alert,
   PageControlFaker,
   ActivityIndicator,
