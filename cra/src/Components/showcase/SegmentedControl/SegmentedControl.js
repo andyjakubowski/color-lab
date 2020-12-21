@@ -1,22 +1,14 @@
 import './SegmentedControl.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import getClassNames, { getColorModeClassName } from '../../../util/util';
+import getClassNames from '../../../util/util';
 import React, { useState } from 'react';
 
-function SegmentedControl({ componentState, colorModeName }) {
+function SegmentedControl({ componentState }) {
   const SEGMENTS = ['Map', 'Transit', 'Satellite'];
-  // const SEGMENTS = ['A', 'B', 'C', 'D', 'E'];
   const segmentCount = SEGMENTS.length;
   const defaultSelectedSegmentIndex = 0;
   const [selectedSegmentIndex, setSelectedSegmentIndex] = useState(
     defaultSelectedSegmentIndex
   );
-  const supportedStates = ['default', 'disabled'];
-  const isStateSupported = supportedStates.includes(componentState);
-
-  if (!isStateSupported) {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
 
   const block = 'SegmentedControl';
   const elements = [
@@ -28,7 +20,6 @@ function SegmentedControl({ componentState, colorModeName }) {
   ];
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
-  const colorModeClassName = getColorModeClassName(colorModeName);
 
   const handleSegmentClick = function handleSegmentClick(clickedSegmentIndex) {
     setSelectedSegmentIndex(clickedSegmentIndex);
@@ -68,7 +59,7 @@ function SegmentedControl({ componentState, colorModeName }) {
 
   return (
     <div
-      className={`${block} ${colorModeClassName}`}
+      className={`${block}`}
       style={{
         '--SegmentedControl__selected-segment-index': selectedSegmentIndex,
         '--SegmentedControl__segment-count': segmentCount,
@@ -79,5 +70,7 @@ function SegmentedControl({ componentState, colorModeName }) {
     </div>
   );
 }
+
+SegmentedControl.supportedStates = ['default', 'disabled'];
 
 export default SegmentedControl;

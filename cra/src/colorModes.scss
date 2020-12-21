@@ -116,6 +116,10 @@
   --UnsupportedStatePlaceholder__text-color: var(--quaternary-label);
 }
 
+.TextField {
+  --text-color: var(--label);
+}
+
 .Alert {
   --platter-color: var(--quaternary-fill);
   --title-color: var(--label);
@@ -173,7 +177,7 @@
   --SegmentedControl__segment-title-animation-time: var(--animation-time-short);
 }
 
-.SegmentedControl.colorModeDark {
+.colorModeDark .SegmentedControl {
   --SegmentedControl__background-color: var(--tertiary-fill);
   --SegmentedControl__selection-indicator-background: var(--system-grey2);
 }

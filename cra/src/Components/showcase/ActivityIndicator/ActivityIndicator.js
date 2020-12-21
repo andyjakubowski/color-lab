@@ -1,16 +1,10 @@
 import './ActivityIndicator.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import { getColorModeClassName } from '../../../util/util';
 
 const ActivityIndicator = function ActivityIndicator({
   componentState,
   colorModeName,
 }) {
   const block = 'ActivityIndicator';
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
-  const colorModeClassName = getColorModeClassName(colorModeName);
-
   const lineCount = 8;
   const fullRotation = 360;
   const svgViewBoxSize = 31;
@@ -56,11 +50,9 @@ const ActivityIndicator = function ActivityIndicator({
     </svg>
   );
 
-  if (isStateSupported) {
-    return <div className={`${block} ${colorModeClassName}`}>{svg}</div>;
-  } else {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
+  return <div className={`${block}`}>{svg}</div>;
 };
+
+ActivityIndicator.supportedStates = ['default'];
 
 export default ActivityIndicator;

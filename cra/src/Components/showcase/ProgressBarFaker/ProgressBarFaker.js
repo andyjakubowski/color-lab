@@ -1,11 +1,8 @@
 import './ProgressBarFaker.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import React, { useState, useEffect } from 'react';
 
-function ProgressBarFaker({ componentState, colorModeName }) {
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
+function ProgressBarFaker({ componentState }) {
   const minProgressRate = 0.0;
   const maxProgressRate = 1.0;
   const startProgressRate = 0.2;
@@ -51,19 +48,16 @@ function ProgressBarFaker({ componentState, colorModeName }) {
     return cleanUp;
   }, [progressRate, isPaused]);
 
-  if (!isStateSupported) {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
-
   return (
     <div className="ProgressBarFaker" onClick={() => setIsPaused(!isPaused)}>
       <ProgressBar
         componentState={componentState}
-        colorModeName={colorModeName}
         progressRate={progressRate}
       />
     </div>
   );
 }
+
+ProgressBarFaker.supportedStates = ['default'];
 
 export default ProgressBarFaker;

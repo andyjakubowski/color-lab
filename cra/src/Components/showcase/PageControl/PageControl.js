@@ -1,17 +1,13 @@
 import './PageControl.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import getClassNames, { getColorModeClassName } from '../../../util/util';
+import getClassNames from '../../../util/util';
 
 const PageControl = function PageControl({
   componentState,
-  colorModeName,
   numberOfPages = 4,
   currentPageIndex = 3,
   onPreviousPage = () => console.log('onPreviousPage'),
   onNextPage = () => console.log('onNextPage'),
 }) {
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
   const block = 'PageControl';
   const elements = [
     'sideSpacerLeft',
@@ -22,7 +18,6 @@ const PageControl = function PageControl({
   ];
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
-  const colorModeClassName = getColorModeClassName(colorModeName);
   const isFirstPageCurrent = currentPageIndex === 0;
   const isLastPageCurrent = currentPageIndex + 1 === numberOfPages;
 
@@ -92,25 +87,21 @@ const PageControl = function PageControl({
     );
   });
 
-  if (isStateSupported) {
-    return (
-      <div className={`${block} ${colorModeClassName}`}>
-        <div
-          className={classNames.sideSpacerLeft}
-          onClick={handleSideSpacerLeftClick}
-        ></div>
-        <div className={classNames.pageIndicatorsContainer}>
-          {pageIndicators}
-        </div>
-        <div
-          className={classNames.sideSpacerRight}
-          onClick={handleSideSpacerRightClick}
-        ></div>
-      </div>
-    );
-  } else {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
+  return (
+    <div className={`${block}`}>
+      <div
+        className={classNames.sideSpacerLeft}
+        onClick={handleSideSpacerLeftClick}
+      ></div>
+      <div className={classNames.pageIndicatorsContainer}>{pageIndicators}</div>
+      <div
+        className={classNames.sideSpacerRight}
+        onClick={handleSideSpacerRightClick}
+      ></div>
+    </div>
+  );
 };
+
+PageControl.supportedStates = ['default'];
 
 export default PageControl;

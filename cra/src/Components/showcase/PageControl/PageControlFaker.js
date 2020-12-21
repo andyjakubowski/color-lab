@@ -1,16 +1,11 @@
 import './PageControlFaker.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
 import PageControl from './PageControl';
 import React, { useState } from 'react';
-import { getColorModeClassName } from '../../../util/util';
 
 function PageControlFaker({ componentState, colorModeName }) {
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
   const numberOfPages = 5;
   const startPage = 0;
   const [currentPageIndex, setCurrentPageIndex] = useState(startPage);
-  const colorModeClassName = getColorModeClassName(colorModeName);
 
   const onPreviousPage = function onPreviousPage() {
     const newCurrentPageIndex = currentPageIndex - 1;
@@ -22,12 +17,8 @@ function PageControlFaker({ componentState, colorModeName }) {
     setCurrentPageIndex(newCurrentPageIndex);
   };
 
-  if (!isStateSupported) {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
-
   return (
-    <div className={`PageControlFaker ${colorModeClassName}`}>
+    <div className={`PageControlFaker`}>
       <div className="PageControlFaker__page-label">
         {`Page ${currentPageIndex + 1}`}
       </div>
@@ -42,5 +33,7 @@ function PageControlFaker({ componentState, colorModeName }) {
     </div>
   );
 }
+
+PageControlFaker.supportedStates = ['default'];
 
 export default PageControlFaker;

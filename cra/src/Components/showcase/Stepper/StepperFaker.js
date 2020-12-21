@@ -1,18 +1,13 @@
 import './StepperFaker.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
 import Stepper from './Stepper';
 import React, { useState } from 'react';
-import { getColorModeClassName } from '../../../util/util';
 
-function StepperFaker({ componentState, colorModeName }) {
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
+function StepperFaker({ componentState }) {
   const minValue = 0;
   const maxValue = 4;
   const step = 1;
   const startValue = minValue;
   const [value, setValue] = useState(startValue);
-  const colorModeClassName = getColorModeClassName(colorModeName);
 
   const decrementValue = function decrementValue() {
     const newValue = value - step;
@@ -38,16 +33,11 @@ function StepperFaker({ componentState, colorModeName }) {
     }
   };
 
-  if (!isStateSupported) {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
-
   return (
-    <div className={`StepperFaker ${colorModeClassName}`}>
+    <div className={`StepperFaker`}>
       <div className="StepperFaker__label">{value}</div>
       <Stepper
         componentState={componentState}
-        colorModeName={colorModeName}
         value={value}
         minValue={minValue}
         maxValue={maxValue}
@@ -57,5 +47,7 @@ function StepperFaker({ componentState, colorModeName }) {
     </div>
   );
 }
+
+StepperFaker.supportedStates = ['default'];
 
 export default StepperFaker;

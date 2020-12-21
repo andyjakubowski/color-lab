@@ -1,25 +1,16 @@
 import './Stepper.scss';
 import { ReactComponent as DecrementSVG } from './decrement.svg';
 import { ReactComponent as IncrementSVG } from './increment.svg';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import getClassNames, { getColorModeClassName } from '../../../util/util';
+import getClassNames from '../../../util/util';
 
 function Stepper({
   componentState,
-  colorModeName,
   value = 0,
   minValue = 0,
   maxValue = 6,
   onDecrementClick = () => console.log('Stepper decrement clicked'),
   onIncrementClick = () => console.log('Stepper increment clicked'),
 }) {
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
-
-  if (!isStateSupported) {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
-
   const block = 'Stepper';
   const elements = [
     'segmentsContainer',
@@ -31,7 +22,6 @@ function Stepper({
   ];
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
-  const colorModeClassName = getColorModeClassName(colorModeName);
   const isDecrementDisabled = value <= minValue;
   const isIncrementDisabled = value >= maxValue;
   const disabledSegmentContainerClassName =
@@ -44,7 +34,7 @@ function Stepper({
     : classNames.increment;
 
   return (
-    <div className={`${block} ${colorModeClassName}`}>
+    <div className={`${block}`}>
       <div className={classNames.segmentsContainer}>
         <div
           className={`${classNames.segmentContainer} ${classNames.decrement}`}
@@ -66,5 +56,7 @@ function Stepper({
     </div>
   );
 }
+
+Stepper.supportedStates = ['default'];
 
 export default Stepper;

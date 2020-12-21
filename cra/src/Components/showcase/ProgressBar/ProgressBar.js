@@ -1,24 +1,15 @@
 import './ProgressBar.scss';
-import UnsupportedStatePlaceholder from '../../UnsupportedStatePlaceholder/UnsupportedStatePlaceholder';
-import getClassNames, { getColorModeClassName } from '../../../util/util';
+import getClassNames from '../../../util/util';
 
-function ProgressBar({ componentState, colorModeName, progressRate = 0.0 }) {
-  const supportedStates = ['default'];
-  const isStateSupported = supportedStates.includes(componentState);
-
-  if (!isStateSupported) {
-    return <UnsupportedStatePlaceholder colorModeName={colorModeName} />;
-  }
-
+function ProgressBar({ componentState, progressRate = 0.0 }) {
   const block = 'ProgressBar';
   const elements = ['track', 'progress'];
   const modifier = componentState;
   const classNames = getClassNames(block, elements, modifier);
-  const colorModeClassName = getColorModeClassName(colorModeName);
 
   return (
     <div
-      className={`${block} ${colorModeClassName}`}
+      className={`${block}`}
       style={{
         '--progress-rate': progressRate,
       }}
@@ -29,5 +20,7 @@ function ProgressBar({ componentState, colorModeName, progressRate = 0.0 }) {
     </div>
   );
 }
+
+ProgressBar.supportedStates = ['default'];
 
 export default ProgressBar;
