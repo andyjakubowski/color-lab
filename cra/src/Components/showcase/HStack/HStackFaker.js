@@ -7,9 +7,9 @@ const HStackFaker = function HStackFaker() {
     <div style={{ width: '100%' }}>
       <HStack>
         <IconButton />
-        {/* <Spacer /> */}
+        <Spacer />
         <IconButton />
-        {/* <Spacer /> */}
+        <Spacer />
         <IconButton />
       </HStack>
     </div>

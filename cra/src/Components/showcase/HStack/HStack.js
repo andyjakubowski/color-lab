@@ -3,7 +3,7 @@ import './HStack.scss';
 const HStack = function HStack({
   children,
   alignment = 'center',
-  spacing = '30px',
+  spacing = '0',
 }) {
   return (
     <div
