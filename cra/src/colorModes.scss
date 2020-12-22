@@ -116,6 +116,22 @@
   --UnsupportedStatePlaceholder__text-color: var(--quaternary-label);
 }
 
+.SystemButton {
+  --title-color: var(--tint);
+  --background-color_hover: hsla(
+    var(--tertiary-fill-h),
+    var(--tertiary-fill-s),
+    var(--tertiary-fill-l),
+    var(--tertiary-fill-a)
+  );
+  --background-color_pressed: hsla(
+    var(--tertiary-fill-h),
+    var(--tertiary-fill-s),
+    calc(var(--tertiary-fill-l) + 10%),
+    var(--tertiary-fill-a)
+  );
+}
+
 .TextField {
   --text-color: var(--label);
   --placeholder-color: var(--secondary-label);
