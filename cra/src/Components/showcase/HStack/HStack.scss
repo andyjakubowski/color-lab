@@ -1,7 +1,7 @@
 .HStack {
   display: flex;
   gap: var(--spacing);
-  align-items: var(--alignment);
+  align-items: var(--alignment, center);
 
   &_top {
     --alignment: flex-start;

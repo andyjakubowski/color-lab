@@ -1,13 +1,10 @@
 import './HStack.scss';
 
-const HStack = function HStack({
-  children,
-  alignment = 'center',
-  spacing = '0',
-}) {
+const HStack = function HStack({ children, alignment, spacing = '0' }) {
+  const alignmentClassName = !!alignment ? `HStack_${alignment}` : '';
   return (
     <div
-      className={`HStack HStack_${alignment}`}
+      className={`HStack ${alignmentClassName}`}
       style={{ '--spacing': spacing }}
     >
       {children}
