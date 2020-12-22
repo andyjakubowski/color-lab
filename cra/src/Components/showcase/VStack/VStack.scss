@@ -1,0 +1,18 @@
+.VStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  align-items: var(--alignment, center);
+
+  &_leading {
+    --alignment: flex-start;
+  }
+
+  &_center {
+    --alignment: center;
+  }
+
+  &_trailing {
+    --alignment: flex-end;
+  }
+}
