@@ -2,10 +2,9 @@ import './TextField.scss';
 import { makeBemClassNamer } from '../../../util/util';
 import { ReactComponent as ClearSvg } from './Clear.svg';
 import { ReactComponent as MagnifyingGlassSvg } from './MagnifyingGlass.svg';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const TextField = function TextField({
-  componentState: state,
   placeholderText = 'Search',
   text = '',
 }) {
