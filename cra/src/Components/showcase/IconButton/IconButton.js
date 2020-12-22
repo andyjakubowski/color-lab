@@ -2,7 +2,9 @@ import './IconButton.scss';
 import { makeBemClassNamer } from '../../../util/util.js';
 import { ReactComponent as CalendarSvg } from './calendar.svg';
 
-const IconButton = function IconButton({ componentState: modifier }) {
+const IconButton = function IconButton({
+  componentState: modifier = 'default',
+}) {
   const block = 'IconButton';
   const bem = makeBemClassNamer(block);
   return (
