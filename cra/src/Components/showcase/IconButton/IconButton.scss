@@ -1,0 +1,56 @@
+.IconButton {
+  --default-icon-color: #4554ce;
+  --default-background-color: transparent;
+
+  --internal-icon-color: var(--icon-color, var(--default-icon-color));
+  --internal-background-color: var(
+    --background-color,
+    var(--default-background-color)
+  );
+
+  cursor: pointer;
+
+  &_default:hover,
+  &_hovered {
+    --default-background-color: hsla(0, 0%, 50%, 10%);
+    --internal-background-color: var(
+      --background-color_hover,
+      var(--default-background-color)
+    );
+  }
+
+  &_default:active,
+  &_pressed {
+    --default-background-color: hsla(0, 0%, 50%, 35%);
+    --internal-background-color: var(
+      --background-color_pressed,
+      var(--default-background-color)
+    );
+  }
+
+  &_default:disabled,
+  &_disabled {
+    --default-icon-color: var(--tertiary-label);
+    --internal-icon-color: var(
+      --icon-color_disabled,
+      var(--default-icon-color)
+    );
+
+    cursor: default;
+  }
+
+  &__container {
+    border: none;
+    border-radius: 6px;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    background-color: var(--internal-background-color);
+
+    cursor: inherit;
+  }
+
+  &__icon {
+    fill: var(--internal-icon-color);
+  }
+}

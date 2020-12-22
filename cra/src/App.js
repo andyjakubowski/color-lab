@@ -3,6 +3,7 @@ import './App.scss';
 import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
+import IconButton from './components/showcase/IconButton/IconButton';
 import SystemButton from './components/showcase/SystemButton/SystemButton';
 import TextField from './components/showcase/TextField/TextField';
 import Alert from './components/showcase/Alert/Alert';
@@ -34,6 +35,7 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
+  IconButton,
   SystemButton,
   TextField,
   Alert,
