@@ -1,17 +1,18 @@
 .HStack {
+  --alignment-top: flex-start;
+  --alignment-center: center;
+  --alignment-bottom: flex-end;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   gap: var(--spacing);
-  align-items: var(--alignment, center);
+  justify-content: var(--v-stack-alignment, center);
+  align-items: var(--alignment, var(--alignment-center));
 
-  &_top {
-    --alignment: flex-start;
-  }
-
-  &_center {
-    --alignment: center;
-  }
-
-  &_bottom {
-    --alignment: flex-end;
+  &_stretchable {
+    flex: 1 100000 auto;
+    // background: hsla(0, 100%, 50%, 20%);
   }
 }
