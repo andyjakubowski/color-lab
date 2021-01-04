@@ -4,7 +4,6 @@ import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
 import ToolbarFaker from './components/showcase/ToolbarFaker/ToolbarFaker';
-import HStackFaker from './components/showcase/HStack/HStackFaker';
 import IconButton from './components/showcase/IconButton/IconButton';
 import SystemButton from './components/showcase/SystemButton/SystemButton';
 import TextField from './components/showcase/TextField/TextField';
@@ -38,7 +37,6 @@ updateRootStyles(colorModesData);
 
 const components = [
   ToolbarFaker,
-  HStackFaker,
   IconButton,
   SystemButton,
   TextField,
