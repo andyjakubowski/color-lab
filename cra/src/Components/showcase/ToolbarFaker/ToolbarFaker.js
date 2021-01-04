@@ -7,15 +7,15 @@ const ToolbarFaker = function ToolbarFaker() {
   return (
     <div className="ToolbarFaker">
       <HStack>
-        <HStack>
-          <IconButton />
-          <IconButton />
-        </HStack>
+        <IconButton />
         <Spacer />
-        <HStack>
-          <IconButton />
-          <IconButton />
-        </HStack>
+        <IconButton />
+        <Spacer />
+        <IconButton />
+        <Spacer />
+        <IconButton />
+        <Spacer />
+        <IconButton />
       </HStack>
     </div>
   );
