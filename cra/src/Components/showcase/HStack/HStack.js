@@ -21,14 +21,19 @@ const childrenWithHasStretchableDescendants = function childrenWithHasStretchabl
     if (hasChildren(child)) {
       const childrenArray = React.Children.toArray(child.props.children);
       const newChildren = childrenWithHasStretchableDescendants(childrenArray);
+      const newProps = {
+        ...child.props,
+        children: newChildren,
+      };
+      if (child.type.name === 'HStack') {
+        newProps.hasStretchableDescendants = newChildren.some(
+          checkHasStretchableDescendants
+        );
+      }
       return {
         ...child,
         props: {
-          ...child.props,
-          children: newChildren,
-          hasStretchableDescendants: newChildren.some(
-            checkHasStretchableDescendants
-          ),
+          ...newProps,
         },
       };
     } else {
@@ -72,7 +77,7 @@ const HStack = function HStack({
   });
   const styleObject = {
     '--spacing': spacing,
-    '--alignment': `--alignment-${alignment}`,
+    '--alignment': `var(--alignment-${alignment})`,
   };
   const classNameStr = `HStack ${
     hasStretchableDescendants ? 'HStack_stretchable' : ''

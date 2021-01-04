@@ -3,6 +3,7 @@ import './App.scss';
 import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
+import HermioneRow from './components/showcase/HermioneRow/HermioneRow';
 import ToolbarFaker from './components/showcase/ToolbarFaker/ToolbarFaker';
 import IconButton from './components/showcase/IconButton/IconButton';
 import SystemButton from './components/showcase/SystemButton/SystemButton';
@@ -36,6 +37,7 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
+  HermioneRow,
   ToolbarFaker,
   IconButton,
   SystemButton,
