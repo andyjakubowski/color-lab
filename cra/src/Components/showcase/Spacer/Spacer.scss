@@ -1,3 +1,11 @@
 .Spacer {
-  flex-grow: 1;
+  flex: 1 100000 auto;
+
+  &_horizontal {
+    width: 100vw;
+  }
+
+  &_vertical {
+    height: 100vh;
+  }
 }
