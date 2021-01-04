@@ -46,7 +46,7 @@ const HStack = function HStack({
   children,
   alignment = 'center',
   spacing = '0',
-  funnyName,
+  padding = '0',
   hasStretchableDescendants = null,
 }) {
   const childrenArray = React.Children.toArray(children);
@@ -76,8 +76,9 @@ const HStack = function HStack({
     }
   });
   const styleObject = {
-    '--spacing': spacing,
+    '--spacing': `${spacing}px`,
     '--alignment': `var(--alignment-${alignment})`,
+    '--padding': `${padding}px`,
   };
   const classNameStr = `HStack ${
     hasStretchableDescendants ? 'HStack_stretchable' : ''
