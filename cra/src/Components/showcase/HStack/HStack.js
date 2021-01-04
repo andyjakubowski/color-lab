@@ -77,7 +77,7 @@ const HStack = function HStack({
   });
   const styleObject = {
     '--spacing': `${spacing}px`,
-    '--alignment': `var(--alignment-${alignment})`,
+    '--h-alignment': `var(--alignment-${alignment})`,
     '--padding': `${padding}px`,
   };
   const classNameStr = `HStack ${

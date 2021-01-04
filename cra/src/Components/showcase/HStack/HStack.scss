@@ -9,8 +9,8 @@
   max-height: 100%;
   display: flex;
   gap: var(--spacing, 0);
-  justify-content: var(--v-stack-alignment, center);
-  align-items: var(--alignment, var(--alignment-center));
+  justify-content: var(--v-alignment, center);
+  align-items: var(--h-alignment, var(--alignment-center));
 
   &_stretchable {
     flex: 1 100000 auto;
