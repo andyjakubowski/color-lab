@@ -1,3 +1,12 @@
+const has = Object.prototype.hasOwnProperty;
+const hasChildren = function hasChildren(reactEl) {
+  if (typeof reactEl !== 'object') {
+    return false;
+  } else {
+    return has.call(reactEl.props, 'children');
+  }
+};
+
 const getClassNames = function getClassNames(block, elements, modifier) {
   return elements.reduce((classNamesObject, element) => {
     return {
@@ -34,4 +43,9 @@ const getColorModeClassName = function getColorModeClassName(modeName) {
   return className;
 };
 
-export { getClassNames as default, getColorModeClassName, makeBemClassNamer };
+export {
+  getClassNames as default,
+  getColorModeClassName,
+  makeBemClassNamer,
+  hasChildren,
+};
