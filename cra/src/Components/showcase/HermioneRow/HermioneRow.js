@@ -7,7 +7,7 @@ import hermione from './hermione_row.png';
 const HermioneRow = function HermioneRow() {
   return (
     <div className="HermioneRow">
-      <HStack alignment="center">
+      <HStack alignment="center" padding="16" spacing="8">
         <img
           src={hermione}
           alt="Drawing of Hermione Granger"
@@ -16,6 +16,8 @@ const HermioneRow = function HermioneRow() {
           }}
         />
         <h4>Hermione Granger</h4>
+        <Spacer />
+        <IconButton />
         <IconButton />
       </HStack>
     </div>
