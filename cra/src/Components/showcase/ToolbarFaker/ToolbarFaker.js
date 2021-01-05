@@ -1,5 +1,5 @@
 import './ToolbarFaker.scss';
-import HStack from '../HStack/HStack';
+import HStack from '../Stacks/HStack/HStack';
 import IconButton from '../IconButton/IconButton';
 import Spacer from '../Spacer/Spacer';
 

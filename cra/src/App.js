@@ -3,7 +3,7 @@ import './App.scss';
 import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
-import VStackTest from './components/showcase/VStack/VStackTest';
+import VStackTest from './components/showcase/Stacks/VStack/VStackTest';
 import HermioneRow from './components/showcase/HermioneRow/HermioneRow';
 import ToolbarFaker from './components/showcase/ToolbarFaker/ToolbarFaker';
 import IconButton from './components/showcase/IconButton/IconButton';
@@ -39,8 +39,8 @@ updateRootStyles(colorModesData);
 
 const components = [
   VStackTest,
-  HermioneRow,
   ToolbarFaker,
+  HermioneRow,
   IconButton,
   SystemButton,
   TextField,

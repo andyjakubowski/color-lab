@@ -1,10 +1,8 @@
-import './VStack.scss';
+import './Stack.scss';
 import React from 'react';
-import { hasChildren } from '../../../util/util';
+import { hasChildren } from '../../../../util/util';
 
-const checkHasStretchableDescendants = function checkHasStretchableDescendants(
-  child
-) {
+const checkIsStretchable = function checkIsStretchable(child) {
   if (typeof child !== 'object') {
     return false;
   } else {
@@ -12,6 +10,10 @@ const checkHasStretchableDescendants = function checkHasStretchableDescendants(
       child.type.name === 'Spacer' || child.props.hasStretchableDescendants
     );
   }
+};
+
+const isStretchableContainer = function isStretchableContainer(reactEl) {
+  return ['HStack', 'VStack', 'ZStack'].includes(reactEl.type.name);
 };
 
 const childrenWithHasStretchableDescendants = function childrenWithHasStretchableDescendants(
@@ -25,9 +27,9 @@ const childrenWithHasStretchableDescendants = function childrenWithHasStretchabl
         ...child.props,
         children: newChildren,
       };
-      if (child.type.name === 'VStack') {
+      if (isStretchableContainer(child)) {
         newProps.hasStretchableDescendants = newChildren.some(
-          checkHasStretchableDescendants
+          checkIsStretchable
         );
       }
       return {
@@ -42,12 +44,39 @@ const childrenWithHasStretchableDescendants = function childrenWithHasStretchabl
   });
 };
 
-const VStack = function VStack({
+const getClassName = function getClassName(
+  dimension,
+  hasStretchableDescendants
+) {
+  const classNameForDimension = function classNameForDimension(dimension) {
+    switch (dimension) {
+      case 'horizontal':
+        return 'HStack';
+      case 'vertical':
+        return 'VStack';
+      case 'depth':
+        return 'ZStack';
+      default:
+        console.warn(`Stack didn’t recognize dimension ${dimension}`);
+    }
+  };
+
+  const baseClass = classNameForDimension(dimension);
+  const stretchableModifierClass = hasStretchableDescendants
+    ? `${baseClass}_stretchable`
+    : '';
+
+  return `${baseClass} ${stretchableModifierClass}`;
+};
+
+const Stack = function Stack({
   children,
+  dimension,
   alignment = 'center',
   spacing = '0',
   padding = '0',
   hasStretchableDescendants = null,
+  ...props
 }) {
   const childrenArray = React.Children.toArray(children);
 
@@ -55,9 +84,7 @@ const VStack = function VStack({
 
   if (hasStretchableDescendants === null) {
     tweakedChildren = childrenWithHasStretchableDescendants(childrenArray);
-    hasStretchableDescendants = tweakedChildren.some(
-      checkHasStretchableDescendants
-    );
+    hasStretchableDescendants = tweakedChildren.some(checkIsStretchable);
   } else {
     tweakedChildren = childrenArray;
   }
@@ -70,19 +97,18 @@ const VStack = function VStack({
         ...child,
         props: {
           ...child.props,
-          dimension: 'horizontal',
+          dimension,
         },
       };
     }
   });
   const styleObject = {
     '--spacing': `${spacing}px`,
-    '--v-alignment': `var(--alignment-${alignment})`,
+    '--alignment': `var(--alignment-${alignment})`,
     '--padding': `${padding}px`,
   };
-  const classNameStr = `VStack ${
-    hasStretchableDescendants ? 'VStack_stretchable' : ''
-  }`;
+
+  const classNameStr = getClassName(dimension, hasStretchableDescendants);
   return (
     <div className={classNameStr} style={styleObject}>
       {tweakedChildren}
@@ -90,6 +116,6 @@ const VStack = function VStack({
   );
 };
 
-VStack.supportedStates = ['default'];
+Stack.supportedStates = ['default'];
 
-export default VStack;
+export default Stack;

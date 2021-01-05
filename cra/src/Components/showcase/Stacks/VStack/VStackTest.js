@@ -1,6 +1,6 @@
 import VStack from './VStack';
-import IconButton from '../IconButton/IconButton';
-import Spacer from '../Spacer/Spacer';
+import IconButton from '../../IconButton/IconButton';
+import Spacer from '../../Spacer/Spacer';
 
 const VStackTest = function VStackTest() {
   return (
@@ -9,9 +9,10 @@ const VStackTest = function VStackTest() {
         background: 'lightgray',
       }}
     >
-      <VStack>
+      <VStack alignment="center">
         <div>Hermione Granger</div>
-        <div>Minister for Magic</div>
+        <div>Minister for Magic and Such</div>
+        <Spacer />
         <IconButton />
         <IconButton />
       </VStack>

@@ -1,5 +1,5 @@
 import './HermioneRow.scss';
-import HStack from '../HStack/HStack';
+import HStack from '../Stacks/HStack/HStack';
 import IconButton from '../IconButton/IconButton';
 import Spacer from '../Spacer/Spacer';
 import hermione from './hermione_row.png';
@@ -7,7 +7,7 @@ import hermione from './hermione_row.png';
 const HermioneRow = function HermioneRow() {
   return (
     <div className="HermioneRow">
-      <HStack alignment="center" padding="16" spacing="8">
+      <HStack alignment="top" padding="16" spacing="8">
         <img
           src={hermione}
           alt="Drawing of Hermione Granger"
@@ -15,7 +15,7 @@ const HermioneRow = function HermioneRow() {
             width: '40px',
           }}
         />
-        <h4>Hermione Granger</h4>
+        <h4 style={{ margin: '0' }}>Hermione Granger</h4>
         <Spacer />
         <IconButton />
         <IconButton />
