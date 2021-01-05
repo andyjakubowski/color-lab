@@ -1,7 +1,7 @@
 .SegmentedControl {
   position: relative;
   --SegmentedControl__padding: 2px;
-  --SegmentedControl__width: 100%;
+  --SegmentedControl__width: 320px;
   --SegmentedControl__segments-container-width: calc(
     var(--SegmentedControl__width) - 2 * var(--SegmentedControl__padding)
   );
