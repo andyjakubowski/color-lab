@@ -1,10 +1,26 @@
-const has = Object.prototype.hasOwnProperty;
+const has = function has(object, key) {
+  return Object.prototype.hasOwnProperty.call(object, key);
+};
+
 const hasChildren = function hasChildren(reactEl) {
   if (typeof reactEl !== 'object') {
     return false;
   } else {
-    return has.call(reactEl.props, 'children');
+    return has(reactEl.props, 'children');
   }
+};
+
+const isObject = function isObject(value) {
+  return typeof value === 'object';
+};
+
+const combineClassNames = function combineClassNames(
+  existingClassName,
+  newClassName
+) {
+  return existingClassName
+    ? `${existingClassName} ${newClassName}`
+    : newClassName;
 };
 
 const getClassNames = function getClassNames(block, elements, modifier) {
@@ -18,11 +34,10 @@ const getClassNames = function getClassNames(block, elements, modifier) {
 
 const makeBemClassNamer = function makeBemClassNamer(blockName) {
   return function bemClassNamer(element, modifier = null) {
-    if (!!modifier) {
-      return `${blockName}__${element}_${modifier}`;
-    } else {
-      return `${blockName}__${element}`;
-    }
+    const elementPart = element === null ? '' : `__${element}`;
+    const modifierPart = modifier === null ? '' : `_${modifier}`;
+
+    return `${blockName}${elementPart}${modifierPart}`;
   };
 };
 
@@ -48,4 +63,7 @@ export {
   getColorModeClassName,
   makeBemClassNamer,
   hasChildren,
+  isObject,
+  combineClassNames,
+  has,
 };

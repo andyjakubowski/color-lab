@@ -1,8 +1,10 @@
 import './Spacer.scss';
+import { combineClassNames } from '../../../util/util';
 
-const Spacer = function Spacer({ dimension = 'vertical' }) {
-  const classNameStr = `Spacer Spacer_${dimension}`;
-  return <div className={classNameStr}></div>;
+const Spacer = function Spacer({ dimension = 'vertical', className }) {
+  const spacerClassName = `Spacer Spacer_${dimension}`;
+  const fullClassName = combineClassNames(className, spacerClassName);
+  return <div className={fullClassName}></div>;
 };
 
 Spacer.supportedStates = ['default'];

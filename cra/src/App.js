@@ -3,7 +3,9 @@ import './App.scss';
 import './colorModes.scss';
 import ComponentList from './components/ComponentList/ComponentList';
 import Inspector from './components/Inspector/Inspector';
+import StackTest from './components/showcase/Stacks/Stack/StackTest';
 import VStackTest from './components/showcase/Stacks/VStack/VStackTest';
+import HermioneCard from './components/showcase/HermioneCard/HermioneCard';
 import HermioneRow from './components/showcase/HermioneRow/HermioneRow';
 import ToolbarFaker from './components/showcase/ToolbarFaker/ToolbarFaker';
 import IconButton from './components/showcase/IconButton/IconButton';
@@ -38,6 +40,8 @@ const updateRootStyles = function updateRootStyles(colorModes) {
 updateRootStyles(colorModesData);
 
 const components = [
+  StackTest,
+  HermioneCard,
   VStackTest,
   ToolbarFaker,
   HermioneRow,
@@ -105,6 +109,8 @@ function App() {
     const { h, s, l } = ColorUtil.hexToHslWithPercentageStrings(e.target.value);
     setTint({ hex: e.target.value, h, s, l });
   }, []);
+
+  // return <StackTest />;
 
   return (
     <div className="App">

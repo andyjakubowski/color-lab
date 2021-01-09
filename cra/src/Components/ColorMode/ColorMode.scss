@@ -20,6 +20,7 @@
     display: grid;
     grid-template-columns: repeat(5, var(--element-state-width));
     grid-template-rows: var(--element-state-height);
+    gap: 16px;
     background-color: var(--ColorMode__background-color, lightgray);
   }
 
@@ -46,6 +47,9 @@
     grid-auto-rows: minmax(0, max-content);
     grid-auto-columns: minmax(0, max-content);
     // align-items: stretch;
-    border: 1px solid hsla(0, 0%, 50%, 0.25);
+    // border: 1px solid hsla(0, 0%, 50%, 0.25);
+    border: 10px solid #444;
+    background: burlywood;
+    // outline: none;
   }
 }
