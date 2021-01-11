@@ -8,30 +8,8 @@ import hermioneFull from './hermione_full.jpg';
 
 const StackTest = function StackTest() {
   return (
-    <div
-      className="StackTest__outer-container hide"
-      style={{
-        width: '100%',
-        height: '100%',
-        padding: '100px 100px',
-        background: '#222',
-      }}
-    >
-      <div
-        className="StackTest__inner-container hide"
-        style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: '17px',
-          display: 'grid',
-          placeContent: 'center',
-          gridAutoRows: 'minmax(0, max-content)',
-          gridAutoColumns: 'minmax(0, max-content)',
-          border: '10px solid #444',
-          background: 'burlywood',
-          outline: 'none',
-        }}
-      >
+    <div className="StackTest__outer-container">
+      <div className="StackTest__inner-container">
         <VStack>
           <HStack>
             <div style={{ padding: '40px' }}>
