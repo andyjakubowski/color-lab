@@ -4,7 +4,6 @@ import {
   makeBemClassNamer,
   hasChildren,
   isObject,
-  combineClassNames,
   has,
 } from '../../../../util/util';
 
@@ -17,8 +16,8 @@ const isStackType = function isStackType(type) {
 };
 
 const getElementType = function getElementType(element) {
-  if (!isObject(element)) {
-    return 'nonObject';
+  if (!React.isValidElement(element)) {
+    return 'notAReactElement';
   }
 
   switch (element.type.name) {
@@ -71,6 +70,10 @@ const checkResizableVertically = function checkResizableVertically(
     !!element.props.resizableVertically ||
     !!element.props.resizableFully
   );
+};
+
+const isSpacer = function isSpacer(element) {
+  return getElementType(element) === 'Spacer';
 };
 
 const childrenWithStretchableDescendantProps = function childrenWithStretchableDescendantProps(
@@ -216,11 +219,13 @@ const Stack = function Stack({
         isChildResizableVertically
       );
 
+      const spacerClassName = isSpacer(child) ? 'Spacer' : null;
       const stackItemClassName = `stack-item_${bemModifier}`;
-      const newClassName = combineClassNames(
+      const newClassName = [
         existingClassName,
-        stackItemClassName
-      );
+        stackItemClassName,
+        spacerClassName,
+      ].join(' ');
       const {
         resizableHorizontally,
         resizableVertically,
