@@ -1,12 +1,14 @@
+import React from 'react';
+
 const has = function has(object, key) {
   return Object.prototype.hasOwnProperty.call(object, key);
 };
 
-const hasChildren = function hasChildren(reactEl) {
-  if (typeof reactEl !== 'object') {
+const hasChildren = function hasChildren(element) {
+  if (!React.isValidElement(element)) {
     return false;
   } else {
-    return has(reactEl.props, 'children');
+    return has(element.props, 'children');
   }
 };
 

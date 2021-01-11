@@ -21,17 +21,6 @@ const getElementType = function getElementType(element) {
     return 'nonObject';
   }
 
-  // const resizableHorizontally = element.props.resizableHorizontally === 'true' || !!element.props.resizableHorizontally
-  // const resizableVertically = element.props.resizableVertically === 'true' || !!element.props.resizableVertically
-
-  // if (resizableHorizontally && resizableVertically) {
-  //   return 'resizableFully';
-  // } else if (resizableHorizontally) {
-  //   return 'resizableHorizontally';
-  // } else if (resizableVertically) {
-  //   return 'resizableVertically';
-  // }
-
   switch (element.type.name) {
     case 'Spacer':
       return 'Spacer';
