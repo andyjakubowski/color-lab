@@ -31,31 +31,33 @@ const StackTest = function StackTest() {
     //     }}
     //   >
     <VStack>
-      You shall not pass!
       <HStack>
-        <div>Yay!</div>
-        <img
-          src={hermioneFull}
-          alt="Hermione portrait"
-          className="hermione"
-          resizableFully
-        />
-        <div>Yahoo!</div>
-        <img
-          src={hermioneFull}
-          alt="Hermione portrait"
-          className="hermione"
-          resizableFully
-        />
-        <div>Yowza!</div>
+        <div style={{ padding: '40px' }}>
+          Hermione first met Harry Potter and Ron Weasley aboard the Hogwarts
+          Express, who found her unfriendly and somewhat of an "insufferable
+          know-it-all", an impression reinforced by her constant correct answers
+          and eagerness to please the professors. However, she stepped in to
+          take the blame from the boys after they had saved her from a troll on
+          Hallowe'en in 1991, surprising them in a grateful way, which led to
+          them quickly becoming friends. She later played a crucial role in
+          protecting the Philosopher's Stone from Voldemort.
+        </div>
+        Hey
+        <div>
+          <img src={hermioneProfile} resizableFully />
+        </div>
+        <div>
+          Hermione first met Harry Potter and Ron Weasley aboard the Hogwarts
+          Express, who found her unfriendly and somewhat of an "insufferable
+          know-it-all", an impression reinforced by her constant correct answers
+          and eagerness to please the professors. However, she stepped in to
+          take the blame from the boys after they had saved her from a troll on
+          Hallowe'en in 1991, surprising them in a grateful way, which led to
+          them quickly becoming friends. She later played a crucial role in
+          protecting the Philosopher's Stone from Voldemort.
+        </div>
       </HStack>
-      <img
-        src={hermioneFull}
-        alt="Hermione portrait"
-        className="hermione"
-        resizableFully
-      />
-      The underworld
+      <img src={hermioneFull} resizableFully />
     </VStack>
     //   </div>
     // </div>

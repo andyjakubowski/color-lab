@@ -6,6 +6,17 @@
   --alignment-center: center;
   --alignment-trailing: flex-end;
 
+  padding: var(--padding, 0);
+  height: 100%;
+  display: flex;
+  align-items: var(--alignment, var(--alignment-center));
+  justify-content: center;
+  gap: var(--spacing, 0);
+
+  &_vertical {
+    flex-direction: column;
+  }
+
   &_top-level {
     &-content-sized {
       height: 100%;

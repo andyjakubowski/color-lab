@@ -265,21 +265,36 @@ const Stack = function Stack({
       isTopLevelStackResizableVertically,
       'top-level'
     );
-  } else {
-    stackClassNameBemModifier = 'content-sized';
   }
 
-  const stackClassName = combineClassNames(
+  const stackClassName = [
     className,
-    `${bemBlock} ${bem(null, stackClassNameBemModifier)}`
-  );
-  const contentClassName = combineClassNames(
-    bem('content'),
-    bem('content', dimension)
-  );
+    bemBlock,
+    bem(null, stackClassNameBemModifier),
+    bem(null, dimension),
+  ].join(' ');
+
+  const wrappedChildren = tweakedChildren.map((child, index) => {
+    const hasClassName =
+      React.isValidElement(child) && has(child.props, 'className');
+    if (hasClassName) {
+      return (
+        <div className={child.props.className} key={index}>
+          {child}
+        </div>
+      );
+    } else {
+      return (
+        <div className="stack-item_content-sized" key={index}>
+          {child}
+        </div>
+      );
+    }
+  });
+
   return (
     <div className={stackClassName} style={styleObject}>
-      <div className={contentClassName}>{tweakedChildren}</div>
+      {wrappedChildren}
     </div>
   );
 };
