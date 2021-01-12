@@ -1,7 +1,6 @@
 import './ToolbarFaker.scss';
-import HStack from '../Stacks/HStack/HStack';
+import { HStack, VStack, ZStack, Spacer } from '../../Stacks/Stacks';
 import IconButton from '../IconButton/IconButton';
-import Spacer from '../Spacer/Spacer';
 
 const ToolbarFaker = function ToolbarFaker() {
   return (

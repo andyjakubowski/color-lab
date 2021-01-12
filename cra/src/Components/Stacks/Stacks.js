@@ -1,11 +1,6 @@
-import './Stack.scss';
+import './Stacks.scss';
 import React from 'react';
-import {
-  makeBemClassNamer,
-  hasChildren,
-  isObject,
-  has,
-} from '../../../../util/util';
+import { makeBemClassNamer, hasChildren } from '../../util/util';
 
 const combineStyles = function combineStyles(styleProp, localStyles) {
   return styleProp ? { ...localStyles, ...styleProp } : localStyles;
@@ -178,7 +173,6 @@ const Stack = function Stack({
   resizableVertically,
   className,
   style: styleProp,
-  ...props
 }) {
   const isTopLevelStack = isResizabilitySet === null;
   const childrenArray = React.Children.toArray(children);
@@ -203,8 +197,8 @@ const Stack = function Stack({
     tweakedChildren = childrenArray;
   }
 
-  tweakedChildren = tweakedChildren.map((child) => {
-    if (isObject(child)) {
+  tweakedChildren = tweakedChildren.map((child, index) => {
+    if (React.isValidElement(child)) {
       const existingClassName = child.props.className;
       const isChildResizableHorizontally = checkResizableHorizontally(
         child,
@@ -214,33 +208,41 @@ const Stack = function Stack({
         child,
         dimension
       );
-      const bemModifier = getClassNameResizabilityModifier(
+      const resizabilityModifier = getClassNameResizabilityModifier(
         isChildResizableHorizontally,
         isChildResizableVertically
       );
-
       const spacerClassName = isSpacer(child) ? 'Spacer' : null;
-      const stackItemClassName = `stack-item_${bemModifier}`;
-      const newClassName = [
-        existingClassName,
-        stackItemClassName,
+      const containerClassName = [
+        `stack-item__container_${resizabilityModifier}`,
         spacerClassName,
       ].join(' ');
+
+      const stackItemClassName = `stack-item__content_${resizabilityModifier}`;
+      const newClassName = [existingClassName, stackItemClassName].join(' ');
       const {
         resizableHorizontally,
         resizableVertically,
         resizableFully,
         ...rest
       } = child.props;
-      return {
-        ...child,
-        props: {
-          ...rest,
-          className: newClassName,
-        },
-      };
+      return (
+        <div className={containerClassName} key={index}>
+          {{
+            ...child,
+            props: {
+              ...rest,
+              className: newClassName,
+            },
+          }}
+        </div>
+      );
     } else {
-      return child;
+      return (
+        <div className="stack-item__container_content-sized" key={index}>
+          {child}
+        </div>
+      );
     }
   });
   const localStyle = {
@@ -268,31 +270,35 @@ const Stack = function Stack({
     bem(null, dimension),
   ].join(' ');
 
-  const wrappedChildren = tweakedChildren.map((child, index) => {
-    const hasClassName =
-      React.isValidElement(child) && has(child.props, 'className');
-    if (hasClassName) {
-      return (
-        <div className={child.props.className} key={index}>
-          {child}
-        </div>
-      );
-    } else {
-      return (
-        <div className="stack-item_content-sized" key={index}>
-          {child}
-        </div>
-      );
-    }
-  });
-
   return (
     <div className={stackClassName} style={styleObject}>
-      {wrappedChildren}
+      {tweakedChildren}
     </div>
   );
 };
 
-Stack.supportedStates = ['default'];
+const HStack = function HStack(props) {
+  return <Stack {...props} dimension="horizontal" />;
+};
 
-export default Stack;
+const VStack = function VStack(props) {
+  return <Stack {...props} dimension="vertical" />;
+};
+
+const ZStack = function ZStack(props) {
+  return <Stack {...props} dimension="depth" />;
+};
+
+const Spacer = function Spacer({ dimension = 'vertical', className }) {
+  const spacerClassName = `Spacer Spacer_${dimension}`;
+  const fullClassName = [className, spacerClassName].join(' ');
+  return <div className={fullClassName}></div>;
+};
+
+Stack.supportedStates = ['default'];
+HStack.supportedStates = ['default'];
+VStack.supportedStates = ['default'];
+ZStack.supportedStates = ['default'];
+Spacer.supportedStates = ['default'];
+
+export { HStack, VStack, ZStack, Spacer };

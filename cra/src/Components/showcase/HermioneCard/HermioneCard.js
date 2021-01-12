@@ -1,8 +1,6 @@
 import './HermioneCard.scss';
-import HStack from '../Stacks/HStack/HStack';
-import VStack from '../Stacks/VStack/VStack';
+import { HStack, VStack, ZStack, Spacer } from '../../Stacks/Stacks';
 import IconButton from '../IconButton/IconButton';
-import Spacer from '../Spacer/Spacer';
 import hermioneProfile from './hermione_profile.png';
 import hermioneFull from './hermione_full.jpg';
 
@@ -14,13 +12,12 @@ const HermioneCard = function HermioneCard({ className }) {
           className="HermioneCard__resizable-image"
           src={hermioneFull}
           alt="Drawing of Hermione Granger"
-          resizable="true"
+          resizableFully
         />
         <VStack padding="8" alignment="leading">
           <HStack>
             <VStack alignment="leading">
               <div>Hermione Granger</div>
-              <Spacer />
               <div>Minister for Magic</div>
             </VStack>
             <Spacer />
